@@ -1,6 +1,6 @@
 ---
 name: protein-construct-design
-description: Investigate protein sequence-function relationships and develop engineering hypotheses through literature, functional sequence mapping, homolog and partner analysis, computation, and experimental evidence. Renders aligned construct diagrams with traceable evidence. Use for interpreting regions or residues, proposing edits or alternative architectures, and planning informative comparisons.
+description: Use for protein or peptide engineering, interpreting sequence–function relationships, designing construct libraries and controls, or comparing and visualizing existing constructs. Connect a biological objective to specific edits through literature, functional regions, residue evidence, homolog analysis, and relevant computation. Produce aligned interactive diagrams with traceable evidence, complete sequences or chemical records, and experiments that distinguish the proposed mechanisms.
 ---
 
 # Protein construct design

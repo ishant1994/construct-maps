@@ -1,7 +1,7 @@
 {
   "name": "construct-maps",
   "version": "0.1.0",
-  "description": "Design and compare protein constructs. Maps functional regions with their evidence, proposes a small library of designs with matched controls, records peptide chemistry that one-letter sequences cannot carry, and renders the comparison as an interactive document or a static figure.",
+  "description": "Plan protein and peptide designs, compare existing constructs, and explore the evidence behind each change. Propose a focused library with controls, map functional regions and residue conservation, and visualize sequences and peptide chemistry in an interactive document.",
   "author": {
     "name": "ishant1994"
   },
@@ -11,9 +11,9 @@
   "keywords": [
     "protein engineering",
     "construct design",
-    "peptide chemistry",
-    "sequence analysis",
-    "conservation"
+    "peptide design",
+    "sequence visualization",
+    "structure–function relationships"
   ],
   "icon": "./assets/icon.png"
 }

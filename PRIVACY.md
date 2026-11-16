@@ -1,39 +1,46 @@
 # Privacy
 
-Effective date: 2026-11-15
+Effective date: 2026-11-16
 
-Construct Maps does not collect, store or transmit personal data. It has no accounts, no servers
-and no analytics.
+This page describes the Construct Maps plugin and its bundled scripts. The AI application hosting the plugin, along with any connected tools or services, has separate privacy and retention policies.
 
-## What it handles
+## Plugin-operated services
 
-The sequences, records and files given to it in a conversation. They are processed by scripts that
-run inside the session and are written to that session's working folder. The plugin's author never
-receives them.
+Construct Maps has no author-operated backend, account system, or analytics. It does not send conversation content, sequences, or generated files to the plugin’s author through a plugin-operated service.
 
-## What leaves the session
+## Files and processing
 
-Only the lookups listed in the README, and only when the matching step is used.
+The plugin works with the sequences, design records, and files available in your session. Its scripts run in the execution environment provided by the hosting application and write outputs to that environment.
 
-- **UniProt** receives an accession, a cluster id or a Pfam id when homologs are fetched.
-- **NCBI** receives a request for one public file, a substitution matrix.
-- **Europe PMC** receives the DOIs, PubMed ids or PMC ids of cited papers when citations are checked.
-- **PyPI** receives package install requests for `rdkit` and `pyfamsa`.
+The hosting application controls how conversations, files, and execution environments are processed and retained.
 
-None of these requests carries the sequence being designed. Like any web request, each one is
-visible to the service that receives it, including the address it comes from and the identifier
-asked for, and an accession or a paper id can show what a person is working on. Each service
-handles requests under its own privacy policy.
+## External requests made by the bundled scripts
+
+The scripts may make public lookups or install dependencies as part of completing a task:
+
+- **UniProt:** receives accession numbers, UniRef cluster identifiers, or Pfam identifiers when homologs are retrieved.
+- **NCBI:** receives a request for a public substitution-matrix file.
+- **Europe PMC:** receives DOI, PubMed, or PMC identifiers when citation metadata is checked.
+- **Package services:** the configured package index and download hosts receive requests for Python packages and dependencies.
+
+These database lookup requests do not include the sequence being designed. They may be initiated automatically when the workflow requires them.
+
+As with other network requests, the receiving service may observe network metadata, such as the originating IP address. Public identifiers can also reveal the subject of a research task. Each service handles requests under its own policies.
+
+## Other research tools
+
+The hosting AI may use additional tools for literature search, browsing, file access, or other work. This page does not describe or control those tools’ requests.
+
+Their data handling depends on the hosting application, tool provider, permissions, and task instructions.
 
 ## Retention
 
-The plugin retains nothing. Files created in a session stay in that session, under the rules of
-the product it runs in.
+The plugin does not maintain a separate author-operated copy of session data. Generated files and conversation content are retained according to the hosting application’s policies and your settings.
 
 ## Audience
 
-A research tool for people working on proteins and peptides. It is not directed at children.
+Construct Maps is a research tool for people working with proteins and peptides. It is not directed at children.
 
 ## Contact
 
-Raise questions through the repository's issue tracker.
+Raise questions through the repository’s issue tracker. Avoid including confidential sequences, unpublished results, or other sensitive information in public issues.
