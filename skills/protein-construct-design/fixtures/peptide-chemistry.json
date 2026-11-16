@@ -1,0 +1,300 @@
+{
+  "schema_version": 6,
+  "title": "Constrained macrocycle series (illustrative)",
+  "root_id": "peptide-chemistry",
+  "objective": "Hold a short peptide in a single conformation without losing the two residues that contact the target.",
+  "coordinate_note": "Positions are 1-based within the chain. A sequence letter carries the monomer's natural analogue; where the chemistry differs, the chain's chemistry entry names the monomer at that position.",
+  "sources": [],
+  "hypotheses": [
+    {
+      "hypothesis_id": "macrocycle",
+      "question": "Does closing the backbone into a macrocycle improve affinity, rather than merely making the peptide rigid?",
+      "mechanism": "The linear peptide pays a conformational entropy cost on binding. Removing the termini's freedom before binding should recover part of that cost, provided the bound conformation is still reachable once the ring is closed.",
+      "measurement": "Affinity against the linear parent by the same binding assay, with a circular-dichroism spectrum to show the constraint took effect. A rigid peptide that binds no better separates the entropy account from rigidity on its own."
+    },
+    {
+      "hypothesis_id": "local-rigidity",
+      "question": "Is local backbone restriction in the tail enough, without closing the ring?",
+      "mechanism": "A quaternary alpha-carbon narrows the backbone's accessible angles at one position only. If the entropy cost is concentrated in the tail, restricting it there should capture most of the gain at a fraction of the synthetic cost.",
+      "measurement": "Affinity against both the linear parent and the macrocycle. Matching the macrocycle would locate the cost in the tail; matching the parent would place it elsewhere."
+    },
+    {
+      "hypothesis_id": "proteolysis",
+      "question": "Does a single D-residue at the cleavage site extend half-life without changing the binding face?",
+      "mechanism": "Proteases read backbone stereochemistry, so inverting one centre away from the contact residues should block cleavage while leaving the side chains that bind unchanged.",
+      "measurement": "Serum half-life beside affinity. A gain in half-life with lost affinity would mean the inverted centre was not as far from the binding face as assumed."
+    }
+  ],
+  "regions": [
+    {
+      "region_id": "loop",
+      "name": "Disulfide loop",
+      "kind": "module"
+    },
+    {
+      "region_id": "tail",
+      "name": "C-terminal tail",
+      "kind": "linker"
+    }
+  ],
+  "variants": [
+    {
+      "variant_id": "linear",
+      "name": "Linear parent",
+      "construct_role": "reference",
+      "note": "A synthetic sequence with no accession, written to carry the chemistry this record describes.",
+      "features": [
+        {
+          "instance_id": "loop@1",
+          "region_id": "loop",
+          "start": 1,
+          "end": 6
+        },
+        {
+          "instance_id": "tail@1",
+          "region_id": "tail",
+          "start": 7,
+          "end": 9
+        }
+      ],
+      "chains": [
+        {
+          "chain_id": "p",
+          "name": "Peptide",
+          "sequence": "CGSGSCPAG",
+          "chemistry": {
+            "caps": [
+              {
+                "terminus": "C",
+                "monomer": "am",
+                "note": "Amidated, which removes the C-terminal negative charge."
+              }
+            ]
+          }
+        }
+      ],
+      "chemistry": {
+        "bonds": [
+          {
+            "bond_id": "ss",
+            "kind": "disulfide",
+            "a": {
+              "position": 1,
+              "attachment": 3,
+              "expected": "C"
+            },
+            "b": {
+              "position": 6,
+              "attachment": 3,
+              "expected": "C"
+            },
+            "note": "Closes the loop between positions 1 and 6. The record declares this bond; a pair of cysteines on its own would not establish that it forms."
+          }
+        ]
+      }
+    },
+    {
+      "variant_id": "aib",
+      "name": "Aib at position 8",
+      "headline": "Rigidified tail",
+      "construct_role": "candidate",
+      "parent_id": "linear",
+      "hypothesis_id": "local-rigidity",
+      "features": [
+        {
+          "instance_id": "loop@2",
+          "region_id": "loop",
+          "start": 1,
+          "end": 6
+        },
+        {
+          "instance_id": "tail@2",
+          "region_id": "tail",
+          "start": 7,
+          "end": 9
+        }
+      ],
+      "chains": [
+        {
+          "chain_id": "p",
+          "name": "Peptide",
+          "sequence": "CGSGSCPXG",
+          "derivation": "edited",
+          "edits": [
+            {
+              "op": "substitute",
+              "position": 8,
+              "from": "A",
+              "to": "X"
+            }
+          ],
+          "chemistry": {
+            "caps": [
+              {
+                "terminus": "C",
+                "monomer": "am"
+              }
+            ],
+            "residues": [
+              {
+                "position": 8,
+                "monomer": "Aib",
+                "note": "A quaternary alpha carbon with no alpha hydrogen."
+              }
+            ]
+          }
+        }
+      ],
+      "chemistry": {
+        "bonds": [
+          {
+            "bond_id": "ss",
+            "kind": "disulfide",
+            "a": {
+              "position": 1,
+              "attachment": 3
+            },
+            "b": {
+              "position": 6,
+              "attachment": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "variant_id": "cyclic",
+      "name": "Head-to-tail cyclized",
+      "headline": "Closed backbone",
+      "construct_role": "candidate",
+      "parent_id": "linear",
+      "hypothesis_id": "macrocycle",
+      "note": "Same sequence as the parent. The backbone is closed head-to-tail, and the C-terminal amide is gone because the terminus it capped now carries that bond.",
+      "features": [
+        {
+          "instance_id": "loop@3",
+          "region_id": "loop",
+          "start": 1,
+          "end": 6
+        },
+        {
+          "instance_id": "tail@3",
+          "region_id": "tail",
+          "start": 7,
+          "end": 9
+        }
+      ],
+      "chains": [
+        {
+          "chain_id": "p",
+          "name": "Peptide",
+          "sequence": "CGSGSCPAG",
+          "derivation": "unverified"
+        }
+      ],
+      "chemistry": {
+        "bonds": [
+          {
+            "bond_id": "ss",
+            "kind": "disulfide",
+            "a": {
+              "position": 1,
+              "attachment": 3
+            },
+            "b": {
+              "position": 6,
+              "attachment": 3
+            }
+          },
+          {
+            "bond_id": "cyc",
+            "kind": "backbone",
+            "a": {
+              "position": 1,
+              "attachment": 1
+            },
+            "b": {
+              "position": 9,
+              "attachment": 2
+            },
+            "note": "Head-to-tail closure, joining position 1 to position 9."
+          }
+        ]
+      }
+    },
+    {
+      "variant_id": "dala",
+      "name": "D-alanine at position 8",
+      "headline": "Inverted centre at the cleavage site",
+      "construct_role": "candidate",
+      "parent_id": "linear",
+      "hypothesis_id": "proteolysis",
+      "note": "Same letters as the parent, with D-alanine at position 8. The sequence alone describes the all-L peptide.",
+      "features": [
+        {
+          "instance_id": "loop@4",
+          "region_id": "loop",
+          "start": 1,
+          "end": 6
+        },
+        {
+          "instance_id": "tail@4",
+          "region_id": "tail",
+          "start": 7,
+          "end": 9
+        }
+      ],
+      "chains": [
+        {
+          "chain_id": "p",
+          "name": "Peptide",
+          "sequence": "CGSGSCPAG",
+          "derivation": "unverified",
+          "chemistry": {
+            "caps": [
+              {
+                "terminus": "C",
+                "monomer": "am"
+              }
+            ],
+            "residues": [
+              {
+                "position": 8,
+                "monomer": "dA"
+              }
+            ]
+          }
+        }
+      ],
+      "chemistry": {
+        "bonds": [
+          {
+            "bond_id": "ss",
+            "kind": "disulfide",
+            "a": {
+              "position": 1,
+              "attachment": 3
+            },
+            "b": {
+              "position": 6,
+              "attachment": 3
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "attempted_analyses": [
+    {
+      "kind": "conservation",
+      "target": "linear",
+      "attempted": "A search for a natural family to align against.",
+      "reason": "This is a synthetic sequence with no natural homologs, so there is no ortholog set to align and no position can carry a conservation score. The track is absent because the comparison set does not exist."
+    }
+  ],
+  "precedent_search": {
+    "scope": "An illustrative fixture. No search was run, because the sequence is synthetic and exists only in this file.",
+    "completed": false,
+    "reason": "No prior art exists for this sequence. The record is an illustration of how non-canonical chemistry is represented."
+  }
+}

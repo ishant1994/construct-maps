@@ -1,0 +1,2572 @@
+{
+ "note": "Alternative chemical names for monomers whose own name does not contain the word a chemist searches by. Selected from PubChem's synonym list for the compound whose InChIKey matches the fragment this project SHIPS, so an alias belongs to our molecule rather than to a similar name.",
+ "why": "The table mixes two naming conventions: the vendored rows carry trivial names, the rows added here carry PubChem IUPAC. So 3-mercaptopropionic acid is filed as '3-sulfanylpropanoic acid', and a real run searched for a 3-mercaptopropionyl, found nothing, and reported that the vocabulary had no such monomer. It has two.",
+ "selection": "Per monomer, a greedy cover of the synonyms contributing the most words the monomer's own name lacks, capped at 4. Shortest-first was tried and is wrong: it prefers `2hmb` and `C16:0` to `Mercaptopropionic acid`. Registry numbers, all-caps codes, grade and method words are dropped, and a synonym must contain chemical morphology to be considered.",
+ "monomers": {
+  "1Nal": {
+   "cid": 2724883,
+   "inchikey": "OFYAYGJCPXRNBL-LBPRGKRZSA-N",
+   "names": [
+    "(2S)-2-amino-3-naphthalen-1-ylpropanoic acid",
+    "(2S)-2-amino-3-naphthylpropanoic acid",
+    "L-.beta.-(1-naphthyl)alanine"
+   ]
+  },
+  "2Abz": {
+   "cid": 227,
+   "inchikey": "RWZYAGGXGHYGMB-UHFFFAOYSA-N",
+   "names": [
+    "1-aminobenzene-2-carboxylic acid",
+    "Anthranilic Acid-13C6",
+    "Ortho-amidobenzoate"
+   ]
+  },
+  "2Nal": {
+   "cid": 185915,
+   "inchikey": "JPZXHKDZASGCLU-LBPRGKRZSA-N",
+   "names": [
+    "(2S)-2-amino-3-naphthalen-2-ylpropanoic acid",
+    "(2S)-2-amino-3-(2-naphthyl)propionic acid",
+    ".beta.-2-naphthyl-l-alanine"
+   ]
+  },
+  "3Abz": {
+   "cid": 7419,
+   "inchikey": "XFDUHJPVQKIXHO-UHFFFAOYSA-N",
+   "names": [
+    "Aniline-3-carboxylate",
+    "Imidogen, (3-carboxyphenyl)-",
+    "Mesalazine EP Impurity D"
+   ]
+  },
+  "3Pal": {
+   "cid": 152953,
+   "inchikey": "DFZVZEMNPGABKO-ZETCQYMHSA-N",
+   "names": [
+    "(2S)-2-amino-3-(pyridin-3-yl)propanoic acid",
+    "3-Pyridinepropanoic acid, alpha-amino-, (+-)-",
+    "(2S)-2-amino-3-pyridin-3-ylpropanoic acid"
+   ]
+  },
+  "4Abz": {
+   "cid": 978,
+   "inchikey": "ALYNCZNDIQEVRV-UHFFFAOYSA-N",
+   "names": [
+    "Procaine benzylpenicillin impurity a",
+    "para-Aminobenzoate, Magnesium",
+    "4 - carboxy-aniline"
+   ]
+  },
+  "A": {
+   "cid": 5950,
+   "inchikey": "QNAYBMKLOCPYGJ-REOHCLBHSA-N",
+   "names": [
+    "Lysine acetate impurity c",
+    "(S)-2-amino-Propanoate",
+    ".alpha.-Aminopropionic acid"
+   ]
+  },
+  "AEEA": {
+   "cid": 362706,
+   "inchikey": "RUVRGYVESPRHSZ-UHFFFAOYSA-N",
+   "names": [
+    "Amine-PEG2-CH2COOH",
+    "2-[2-(2-azanylethoxy)ethoxy]ethanoic acid",
+    "2-(2-(2-Aminoethoxy)ethoxy)aceticacid"
+   ]
+  },
+  "Aad": {
+   "cid": 92136,
+   "inchikey": "OYIFNHCXNCRBQI-BYPYZUCNSA-N",
+   "names": [
+    "Alha-aminoadipate",
+    "L-alpha-Aminoadipatic acid",
+    "(2S)-2-Amino-hexanedioic Acid"
+   ]
+  },
+  "Abu": {
+   "cid": 80283,
+   "inchikey": "QWCKQJZIFLGMSD-VKHMYHEASA-N",
+   "names": [
+    "(+)-alpha-Aminobutyric acid",
+    "(+)-2-Aminobutanoate",
+    "L-2-Aminobutyric acid, >=99% (titration)"
+   ]
+  },
+  "Abu_23dehydro": {
+   "cid": 6449989,
+   "inchikey": "PAWSVPVNIXFKOS-IHWYPQMZSA-N",
+   "names": [
+    "alpha,beta-Dehydroaminobutyric acid",
+    "2-ammoniobut-2-enoate",
+    "(2Z)-2-Amino-2-butenoic acid"
+   ]
+  },
+  "Ac3c": {
+   "cid": 535,
+   "inchikey": "PAJPWUMXBYXFCZ-UHFFFAOYSA-N",
+   "names": [
+    "1-aminocyclopropanecarboxylic acid;ACPC",
+    "1-azaniumylcyclopropane-1-carboxylate",
+    ".alpha.-Aminocyclopropane carboxylic acid"
+   ]
+  },
+  "Ac5c": {
+   "cid": 2901,
+   "inchikey": "NILQLFBWTXNUOE-UHFFFAOYSA-N",
+   "names": [
+    "1-Aminocyclopentane-1-carboxylic acid",
+    "1-ammonio-1-cyclopentanecarboxylate",
+    "1aminocyclopentane(14c)carboxylicacid"
+   ]
+  },
+  "Ac6c": {
+   "cid": 1366,
+   "inchikey": "WOXWUZCRWJWTRT-UHFFFAOYSA-N",
+   "names": [
+    ".alpha.-Aminocyclohexanecarboxylic acid",
+    "1-ammonio-1-cyclohexanecarboxylate",
+    "1-Amino-1-cyclohexanecarboxylicacid"
+   ]
+  },
+  "Aca": {
+   "cid": 12810660,
+   "inchikey": "JINGUCXQUOKWKH-VIFPVBQESA-N",
+   "names": [
+    "L-2-Aminodecanoic acid(S-form)",
+    "(S)-2-Aminodecanoicacid",
+    "(S)-H-2-Octyl-Gly-OH"
+   ]
+  },
+  "Aib": {
+   "cid": 6119,
+   "inchikey": "FUOOLUPWFVMBKG-UHFFFAOYSA-N",
+   "names": [
+    "2-amino-2-methyl-propanoic acid",
+    ".alpha.,.alpha.-Dimethylglycine",
+    ".alpha.-Aminoisobutanoic acid"
+   ]
+  },
+  "Aib_ol": {
+   "cid": 11807,
+   "inchikey": "CBTVGIZVANVGBH-UHFFFAOYSA-N",
+   "names": [
+    "Hydroxy-tert-butylamine",
+    "beta-Aminoisobutyl alcohol",
+    "1,1-Dimethyl-2-hydroxyethylamine"
+   ]
+  },
+  "Ala_al": {
+   "cid": 448397,
+   "inchikey": "QPMCUNAXNMSGTK-VKHMYHEASA-N",
+   "names": [
+    "L-Alanine-2-chlorotrityl resin"
+   ]
+  },
+  "Ala_ol": {
+   "cid": 80307,
+   "inchikey": "BKMMTJMQCTUHRP-VKHMYHEASA-N",
+   "names": [
+    "((s)-1-(hydroxymethyl)ethyl)amine",
+    "L-(+)-Alaninol ((S)-(+)-2-Amino-1-propanol)",
+    "(+)-2-aminopropanol"
+   ]
+  },
+  "Ala_tBu": {
+   "cid": 164608,
+   "inchikey": "NPDBDJFLKKQMCM-SCSAIBSYSA-N",
+   "names": [
+    "(2S)-2-Amino-3,3-DiMethyl-Butanoic Acid",
+    "L-tert-Leucine, puriss., >=99.0%",
+    "L-| cent-tert-Butylglycine"
+   ]
+  },
+  "Apm": {
+   "cid": 446719,
+   "inchikey": "JUQLUIFNNFIIKC-YFKPBYRVSA-N",
+   "names": [
+    "(2S)-2-aminoheptanedioic acid",
+    "(2S)-L-alpha-Aminopimelic acid",
+    "(S)-2-Aminoheptanedioicacid"
+   ]
+  },
+  "App": {
+   "cid": 174949,
+   "inchikey": "JAJQQUQHMLWDFB-VHSXEESVSA-N",
+   "names": [
+    "4-Amino-2,4,5-trideoxy-5-phenylpentonic acid",
+    "4-Amino-3-hydroxy-5-phenylpentanoic acid"
+   ]
+  },
+  "Arg_al": {
+   "cid": 444288,
+   "inchikey": "QJYRUYURLPTHLR-YFKPBYRVSA-N",
+   "names": [
+    "arginine aldehyde"
+   ]
+  },
+  "Asp_OMe": {
+   "cid": 97368,
+   "inchikey": "SBRYFUVVWOMLLP-VKHMYHEASA-N",
+   "names": [
+    "aspartic acid beta-methyl ester",
+    "4-Methyl hydrogen L-aspartate"
+   ]
+  },
+  "Asp_Ph2NH2": {
+   "cid": 161166,
+   "inchikey": "YGPSJZOEDVAXAB-QMMMGPOBSA-N",
+   "names": [
+    "alpha,2-diamino-gamma-oxo-Benzenebutanoate",
+    "3-(2-aminobenzoyl)-L-alanine",
+    "4-(2-aminophenyl)-2-azaniumyl-4-oxobutanoate"
+   ]
+  },
+  "Asp_al": {
+   "cid": 6540254,
+   "inchikey": "CGJJPOYORMGCGE-VKHMYHEASA-N",
+   "names": [
+    "Succinaldehydic acid, 3-amino-, L-"
+   ]
+  },
+  "Asu": {
+   "cid": 7009575,
+   "inchikey": "YOFPFYYTUIARDI-LURJTMIESA-N",
+   "names": [
+    "(2S)-2-Aminooctanedioic acid",
+    "(S)-2-Aminooctanedioicacid",
+    ".alpha.-aminosuberic acid, l-"
+   ]
+  },
+  "Aze": {
+   "cid": 16486,
+   "inchikey": "IADUEWIQBXOCDZ-VKHMYHEASA-N",
+   "names": [
+    "Acide L-azetidine-2-carboxylic [French]",
+    "(-)-azetidinecarboxylic acid",
+    "(S)-2-azetidinecarboxyic acid"
+   ]
+  },
+  "Azi": {
+   "cid": 11286438,
+   "inchikey": "WBGBOXYJYPVLQJ-REOHCLBHSA-N",
+   "names": [
+    "(2S)-2-Aziridinecarboxylic acid",
+    "(S)-Aziridine-2-carboxylicacid"
+   ]
+  },
+  "Bip": {
+   "cid": 2761815,
+   "inchikey": "JCZLABDVDPYLRZ-AWEZNQCLSA-N",
+   "names": [
+    "(S)-4-Biphenylyl-alanine (H-L-Bip-OH)",
+    "(2S)-2-amino-3-(4-phenylphenyl)propanoic acid",
+    "(2S)-2-amino-3-biphenyl-4-ylpropanoic acid"
+   ]
+  },
+  "Bmt_E": {
+   "cid": 5282047,
+   "inchikey": "RPALEGQGCGCFCX-FIWMUJSFSA-N",
+   "names": [
+    "(4R)-4-((E)-2-Butenyl)-4-methyl-L-threonine",
+    "2-Amino-3-hydroxy-4-methyl-6-octenoic acid",
+    "2-Butenyl-4-methylthreonine"
+   ]
+  },
+  "Bn_": {
+   "cid": 244,
+   "inchikey": "WVDDGKGOMKODPV-UHFFFAOYSA-N",
+   "names": [
+    "Benzyl alcohol, tested according to Ph.Eur.",
+    "Alcool benzylique [INN-French]",
+    "Benzene-2,3,4,5,6-d5-methan-alpha,alpha-d2-ol"
+   ]
+  },
+  "Boc": {
+   "cid": 3015642,
+   "inchikey": "XKXIQBVKMABYQJ-UHFFFAOYSA-N",
+   "names": [
+    "Carbonic acid, mono(1,1-dimethylethyl) ester",
+    "tert-Butyl hydrogen carbonate",
+    "t-butoxycarboxylic acid"
+   ]
+  },
+  "Bua": {
+   "cid": 264,
+   "inchikey": "FERIUCNNQQJTOY-UHFFFAOYSA-N",
+   "names": [
+    "TNFa + Sodium Butyrate",
+    "Butanoate; C4:0; Ethylacetic acid",
+    "Butyric acid (natural)"
+   ]
+  },
+  "Bux": {
+   "cid": 6971280,
+   "inchikey": "YQGDEPYYFWUPGO-VKHMYHEASA-N",
+   "names": [
+    "(3S)-4-azaniumyl-3-hydroxybutanoate"
+   ]
+  },
+  "Bz": {
+   "cid": 243,
+   "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+   "names": [
+    "Benzoyl peroxide, hydrous Impurity B",
+    "Aromatic carboxylic acid",
+    "Benzoate, Potassium"
+   ]
+  },
+  "C": {
+   "cid": 5862,
+   "inchikey": "XUJNEKJLAYXESH-REOHCLBHSA-N",
+   "names": [
+    ".alpha.-Amino-.beta.-thiolpropionic acid",
+    "L-Cysteine from non-animal source",
+    "(2R)-2-amino-3-sulfanyl-propanoic acid"
+   ]
+  },
+  "C16acid": {
+   "cid": 985,
+   "inchikey": "IPCSVZSSVZVIGE-UHFFFAOYSA-N",
+   "names": [
+    "Palmitic acid (constituent of saw palmetto)",
+    "(c14c18)alkylcarboxylicacid",
+    "hexadecanoate;hydron"
+   ]
+  },
+  "C18diacid": {
+   "cid": 70095,
+   "inchikey": "BNJOQKFENDDGSC-UHFFFAOYSA-N",
+   "names": [
+    "1,16-hexadecane dicarboxylic acid",
+    "1,16-Hexadecanedicarboxylate",
+    "1,16-Hexadecanedicarboxylic acid"
+   ]
+  },
+  "Cbz": {
+   "cid": 2285,
+   "inchikey": "NJAPCAIWQRPQPY-UHFFFAOYSA-N",
+   "names": [
+    "Carbonic acid monobenzyl ester",
+    "Phenylmethyl hydrogen carbonate"
+   ]
+  },
+  "Cha": {
+   "cid": 712421,
+   "inchikey": "ORQXBVXKBGUSBA-QMMMGPOBSA-N",
+   "names": [
+    "(2S)-2-amino-3-cyclohexyl-propanoic acid",
+    "(S)-alpha-Aminocyclohexanepropionic acid",
+    "(2S)-2-amino-3-cyclohexylpropanoic acid"
+   ]
+  },
+  "Chg": {
+   "cid": 736848,
+   "inchikey": "WAMWSIDTKSNDCU-ZETCQYMHSA-N",
+   "names": [
+    "(2S)-2-amino-2-cyclohexyl-acetic acid",
+    "(alphaS)-alpha-Aminocyclohexaneacetic acid",
+    "(2S)-2-amino-2-cyclohexylacetic acid"
+   ]
+  },
+  "Cit": {
+   "cid": 9750,
+   "inchikey": "RHGKLRLOHDJJDR-BYPYZUCNSA-N",
+   "names": [
+    "Alpha-amino-delta-ureidovalerate",
+    "(2S)-2-azaniumyl-5-(carbamoylamino)pentanoate",
+    "Ndelta-carbamy-ornithine"
+   ]
+  },
+  "Cya": {
+   "cid": 72886,
+   "inchikey": "XVOYSCVBGLVSOL-REOHCLBHSA-N",
+   "names": [
+    "alpha-amino-beta-sulfopropionic acid",
+    "(2R)-2-azanyl-3-sulfo-propanoic acid",
+    "(2R)-2-amino-3-sulfopropanoic acid"
+   ]
+  },
+  "Cys_Bn": {
+   "cid": 193613,
+   "inchikey": "GHBAYRBVXCRIHT-VIFPVBQESA-N",
+   "names": [
+    "(2R)-2-ammonio-3-(phenylmethylthio)propanoate",
+    "Alanine, 3-(benzylthio)-, L-",
+    "(2R)-2-amino-3-benzylsulfanylpropanoic acid"
+   ]
+  },
+  "Cys_Me": {
+   "cid": 24417,
+   "inchikey": "IDIDJDIHTAOVLG-VKHMYHEASA-N",
+   "names": [
+    "(2R)-2-azaniumyl-3-(methylsulfanyl)propanoate",
+    "3-(methylthio)-L-alanine",
+    "(+)-S-methyl-L-cysteine"
+   ]
+  },
+  "Cys_SEt": {
+   "cid": 480046,
+   "inchikey": "YIMFYOCZTDBZJL-BYPYZUCNSA-N",
+   "names": [
+    "S-Ethyl mercapto cysteine",
+    "3-(ethyldisulfanyl)-l-alanine"
+   ]
+  },
+  "D": {
+   "cid": 5960,
+   "inchikey": "CKLJMWTZIZZHCS-REOHCLBHSA-N",
+   "names": [
+    "(2S)-2-azaniumyl-4-hydroxy-4-oxobutanoate",
+    "Aspartic; Lysine Acetate EP Impurity A",
+    "potassium aspartate and magnesium aspart"
+   ]
+  },
+  "D_2Nal": {
+   "cid": 2733661,
+   "inchikey": "JPZXHKDZASGCLU-GFCCVEGCSA-N",
+   "names": [
+    "(2R)-2-amino-3-naphthalen-2-ylpropanoic acid",
+    "(2R)-2-azaniumyl-3-naphthalen-2-ylpropanoate",
+    "(R)-alpha-Amino-2-naphthalenepropionic Acid"
+   ]
+  },
+  "D_2Thi": {
+   "cid": 7111749,
+   "inchikey": "WTOFYLAWDLQMBZ-ZCFIWIBFSA-N",
+   "names": [
+    "(2R)-2-azaniumyl-3-thiophen-2-ylpropanoate"
+   ]
+  },
+  "D_3Pal": {
+   "cid": 1268144,
+   "inchikey": "DFZVZEMNPGABKO-SSDOTTSWSA-N",
+   "names": [
+    "(2R)-2-amino-3-(pyridin-3-yl)propanoic acid",
+    "(2R)-2-azaniumyl-3-pyridin-3-ylpropanoate",
+    "(2R)-2-amino-3-pyridin-3-ylpropanoic acid"
+   ]
+  },
+  "D_Abu": {
+   "cid": 439691,
+   "inchikey": "QWCKQJZIFLGMSD-GSVOUGTGSA-N",
+   "names": [
+    "delta-alpha-aminobutyric acid",
+    "(2R)-2-aminobutanoate",
+    "D-2-Aminobutyrate"
+   ]
+  },
+  "D_Ala_ol": {
+   "cid": 68294,
+   "inchikey": "KJJPLEZQSCZCKE-UHFFFAOYSA-N",
+   "names": [
+    "(2hydroxy1(hydroxymethyl)ethyl)amine",
+    "1,3-dihydroxy-2-propylamine",
+    "2-Amino-1,3-propanediol (Serinol)"
+   ]
+  },
+  "D_Cha": {
+   "cid": 736026,
+   "inchikey": "ORQXBVXKBGUSBA-MRVPVSSYSA-N",
+   "names": [
+    "(R)-alpha-aminocyclohexanepropionic acid",
+    ".beta.-cyclohexyl-d-alanine",
+    "(2R)-2-Amino-3-cyclohexylpropionic acid"
+   ]
+  },
+  "D_Chg": {
+   "cid": 736849,
+   "inchikey": "WAMWSIDTKSNDCU-SSDOTTSWSA-N",
+   "names": [
+    "(2R)-2-amino-2-cyclohexyl-acetic acid",
+    "(2R)-2-amino-2-cyclohexylacetic acid",
+    "(2r)-2-amino-2-cyclohexylethanoic acid"
+   ]
+  },
+  "D_Cit": {
+   "cid": 637599,
+   "inchikey": "RHGKLRLOHDJJDR-SCSAIBSYSA-N",
+   "names": [
+    "(2R)-2-amino-5-(carbamoylamino)pentanoic acid",
+    "(2R)-2-ammonio-5-(carbamoylamino)pentanoate",
+    "D-Ornithine, N5-(aminocarbonyl)-"
+   ]
+  },
+  "D_Dab": {
+   "cid": 638153,
+   "inchikey": "OGNSCSPNOLGXSM-GSVOUGTGSA-N",
+   "names": [
+    "D-.alpha.,.gamma.-diaminobutyric acid",
+    "D-2,4-Diaminobutyric acid dihydrochloride"
+   ]
+  },
+  "D_Dap": {
+   "cid": 638152,
+   "inchikey": "PECYZEOJVXMISF-UWTATZPHSA-N",
+   "names": [
+    "D-2-Amino-beta-alanine",
+    "(-)-2,3-diaminopropionic acid",
+    "(2R)-2,3-bis(azanyl)propanoic acid"
+   ]
+  },
+  "D_Dip": {
+   "cid": 1520861,
+   "inchikey": "PECGVEGMRUZOML-CQSZACIVSA-N",
+   "names": [
+    ".beta.-phenyl-d-phenylalanine",
+    "(R)-2-Amino-3,3-diphenylpropanoicacid",
+    "D-3,3-Diphenylalanine"
+   ]
+  },
+  "D_Hyp": {
+   "cid": 440074,
+   "inchikey": "PMMYEEVYMWASQN-IUYQGCFVSA-N",
+   "names": [
+    "(2R,4S)-4-hydroxypyrrolidine-2-carboxylicacid",
+    "trans-4-Hydroxy-D-proline"
+   ]
+  },
+  "D_Met_S_O": {
+   "cid": 9577091,
+   "inchikey": "QEFRNWWLZKMPFJ-KNODYTOMSA-N",
+   "names": [
+    "D-methionine (S)-S-oxide",
+    "d-methionine-S-sulfoxide"
+   ]
+  },
+  "D_Nle": {
+   "cid": 456468,
+   "inchikey": "LRQKBLKVPFOOQJ-RXMQYKEDSA-N",
+   "names": [
+    "(R)-2-Amino-hexanoic acid",
+    "(2R)-2-aminohexanoic acid",
+    "(2R)-2-azaniumylhexanoate"
+   ]
+  },
+  "D_Nva": {
+   "cid": 439575,
+   "inchikey": "SNDPXSYFESPGGJ-SCSAIBSYSA-N",
+   "names": [
+    "dl-alpha-Amino-N-valenic acid",
+    "(2R)-2-aminopentanoic acid",
+    "(2R)-2-azaniumylpentanoate"
+   ]
+  },
+  "D_OAla": {
+   "cid": 61503,
+   "inchikey": "JVTAAEKCZFNVCJ-UWTATZPHSA-N",
+   "names": [
+    "D-Lactic acid, aq. soln., tech.",
+    "Poly(oxy((1S)-1-methyl-2-oxo-1,2-ethanediyl))",
+    "(R)-alpha-Hydroxypropionate"
+   ]
+  },
+  "D_OVal": {
+   "cid": 5289545,
+   "inchikey": "NGEWQZIDQIYUNV-SCSAIBSYSA-N",
+   "names": [
+    "(-)-.alpha.-hydroxyisovaleric acid",
+    "(-)-2-Hydroxy-3-methylbutyric acid",
+    "(2R)-3-Methyl-2-hydroxybutanoic acid"
+   ]
+  },
+  "D_Orn": {
+   "cid": 71082,
+   "inchikey": "AHLPHDHHMVZTML-SCSAIBSYSA-N",
+   "names": [
+    "(2R)-2,5-diaminopentanoate",
+    "(2R)-2,5-diaminopentanoic acid",
+    "(r)-2,5-diaminopentanoicacid"
+   ]
+  },
+  "D_Pen": {
+   "cid": 5852,
+   "inchikey": "VVNCNSJFMMFHPL-VKHMYHEASA-N",
+   "names": [
+    "(2S)-2-Amino-3-methyl-3-sulfanylbutanoic acid",
+    "(2S)-2-azaniumyl-3-methyl-3-sulfanylbutanoate",
+    "3,3-Dimethyl-D-cysteine"
+   ]
+  },
+  "D_Phe_4Cl": {
+   "cid": 667429,
+   "inchikey": "NIGWMJHCCYYCSF-MRVPVSSYSA-N",
+   "names": [
+    "(2R)-2-amino-3-(4-chlorophenyl)propanoic acid",
+    "(2R)-2-azaniumyl-3-(4-chlorophenyl)propanoate",
+    "(R)-fenclonine"
+   ]
+  },
+  "D_Phe_4F": {
+   "cid": 716314,
+   "inchikey": "XWHHYOYVRVGJJY-MRVPVSSYSA-N",
+   "names": [
+    "(2R)-2-azaniumyl-3-(4-fluorophenyl)propanoate",
+    "(r)-4-fluorophenylalanine"
+   ]
+  },
+  "D_Phe_4ureido": {
+   "cid": 67216391,
+   "inchikey": "ZTAKYRNNPKFXGS-MRVPVSSYSA-N",
+   "names": [
+    "4-((Aminocarbonyl)amino)-D-phenylalanine",
+    "(R)-2-Amino-3-(4-ureidophenyl)propanoic acid"
+   ]
+  },
+  "D_Phg": {
+   "cid": 70134,
+   "inchikey": "ZGUNAGUHMKGQNY-SSDOTTSWSA-N",
+   "names": [
+    "Benzeneacetic acid, alpha-amino-, (alphaR)-",
+    "Ampicillin trihydrate impurity l",
+    "(2R)-2-amino-2-phenylacetic acid"
+   ]
+  },
+  "D_Phg_ol": {
+   "cid": 92466,
+   "inchikey": "IJXJGQCXFSSHNL-UHFFFAOYSA-N",
+   "names": [
+    "Benzeneethanol, beta-amino-, (betaR)-",
+    "2-Phenyl-DL-glycinol",
+    "D-(-)-alpha-Phenylglycinol"
+   ]
+  },
+  "D_Pip": {
+   "cid": 736316,
+   "inchikey": "HXEACLLIILLPRG-RXMQYKEDSA-N",
+   "names": [
+    "(2R)-piperidine-2-carboxylic acid",
+    "(+)-Pipecolinic acid",
+    "(2R)-2-Piperidinecarboxylic acid"
+   ]
+  },
+  "D_Pro_ol": {
+   "cid": 2724541,
+   "inchikey": "HVVNJUAVDAZWCB-RXMQYKEDSA-N",
+   "names": [
+    "(2R)-2-hydroxymethyl-pyrrolidine",
+    "(-)-2-pyrrolidinemethanol",
+    "(2R)-2-Hydroxymethylpyrrolidine"
+   ]
+  },
+  "D_Pyr": {
+   "cid": 439685,
+   "inchikey": "ODHCTXKNWHHXJC-GSVOUGTGSA-N",
+   "names": [
+    "(+)-2-Pyrrolidone-5-carboxylic acid",
+    "(+)-Pidolic acid",
+    "(2R)-5-oxopyrrolidine-2-carboxylic acid"
+   ]
+  },
+  "D_Ser_Bn": {
+   "cid": 112114,
+   "inchikey": "IDGQXGPQOGUGIX-SECBINFHSA-N",
+   "names": [
+    "(2R)-2-Amino-3-benzyloxy-propanoic acid",
+    "(2R)-2-azaniumyl-3-phenylmethoxypropanoate",
+    "(2R)-2-amino-3-phenylmethoxypropanoic acid"
+   ]
+  },
+  "D_Thr_ol": {
+   "cid": 2033049,
+   "inchikey": "MUVQIIBPDFTEKM-QWWZWVQMSA-N",
+   "names": [
+    "Reduced Threonine",
+    "(L)-threoninol",
+    "1,3-Butanediol, 2-amino-, (2R,3R)-"
+   ]
+  },
+  "D_Thz": {
+   "cid": 198253,
+   "inchikey": "DZLNHFMRPBPULJ-GSVOUGTGSA-N",
+   "names": [
+    "Acide D thiazolidine carboxylique-4 [French]",
+    "(4S)-4-thiazolidinecarboxylic acid",
+    "(S)-Thiazolidine-4-carboxylicacid"
+   ]
+  },
+  "D_Tic": {
+   "cid": 712398,
+   "inchikey": "BWKMGYQJPOAASG-SECBINFHSA-N",
+   "names": [
+    "D-1,2,3,4-tetrahydroisoquinoline-3-carboxylic"
+   ]
+  },
+  "D_Tyr_3OH": {
+   "cid": 92222,
+   "inchikey": "WTDRDQBEARUVNC-ZCFIWIBFSA-N",
+   "names": [
+    "3,4-Dihydroxy-D-phenylalanine, powder, >=95%",
+    "(+)-3,4-Dihydroxyphenylalanine",
+    "3- hydroxy D- Tyrosine"
+   ]
+  },
+  "D_Tyr_Et": {
+   "cid": 18596379,
+   "inchikey": "RMYPEYHEPIZYDJ-SNVBAGLBSA-N",
+   "names": [
+    "(O-ethyl)-d-tyrosine",
+    "(R)-2-amino-3-(4-ethoxyphenyl)propanoicacid",
+    "3-(p-Ethoxyphenyl)-D-alanine"
+   ]
+  },
+  "D_aHyp": {
+   "cid": 440014,
+   "inchikey": "PMMYEEVYMWASQN-QWWZWVQMSA-N",
+   "names": [
+    "(2R,4R)-4-hydroxypyrrolidinium-2-carboxylate",
+    "cis-4-hydroxy-pyrrolidine-2-carboxylic acid",
+    "4-Hydroxy-D-alloproline"
+   ]
+  },
+  "D_aIle": {
+   "cid": 94206,
+   "inchikey": "AGPKZVBTJJNPAG-CRCLSJGQSA-N",
+   "names": [
+    "(2R,3S)-2-Amino-3-methylvaleric acid",
+    "(2R,3S)-2-azaniumyl-3-methylpentanoate",
+    "(2R,3S)-2-amino-3-methylpentanoic acid"
+   ]
+  },
+  "D_aMeAbu": {
+   "cid": 2724877,
+   "inchikey": "GCHPUFAZSONQIV-RXMQYKEDSA-N",
+   "names": [
+    "(2R)-2-amino-2-methyl-butanoic acid",
+    ".alpha.-methyl-d-.alpha.-aminobutyric acid",
+    "(2R)-2-amino-2-methylbutanoic acid"
+   ]
+  },
+  "D_aThr": {
+   "cid": 90624,
+   "inchikey": "AYFVYJQAPQTCCC-PWNYCUMCSA-N",
+   "names": [
+    "(2R,3R)-2-amino-3-hydroxy-butanoic acid",
+    "(2R3R)-2-Amino-3-hydroxybutyric acid",
+    "(2R,3R)-2-amino-3-hydroxybutanoic acid"
+   ]
+  },
+  "D_gGlu": {
+   "cid": 23327,
+   "inchikey": "WHUUTDBJXJRKMK-GSVOUGTGSA-N",
+   "names": [
+    "(2R)-2-azaniumyl-5-hydroxy-5-oxopentanoate",
+    "(R)-1-Aminopropane-1,3-dicarboxylic acid",
+    "delta-2-Aminoglutarate"
+   ]
+  },
+  "D_hArg": {
+   "cid": 25202705,
+   "inchikey": "QUOGESRFPZDMMT-RXMQYKEDSA-N",
+   "names": [
+    "N6-(Aminoiminomethyl)-D-lysine",
+    "(2r)-2-amino-6-carbamimidamidohexanoic acid",
+    "(R)-2-Amino-6-guanidinohexanoic acid"
+   ]
+  },
+  "D_hArg_Et2": {
+   "cid": 11042985,
+   "inchikey": "PWLYCRQCVMQUBU-SECBINFHSA-N",
+   "names": [
+    "(Z)-N6-(N,N'-diethylcarbamimidoyl)-D-lysine",
+    "Homoarginine Impurity 1",
+    "D-Lysine, N6-(bis(ethylamino)methylene)-"
+   ]
+  },
+  "D_nTyr": {
+   "cid": 89853,
+   "inchikey": "LJCWONGJFPCTTL-SSDOTTSWSA-N",
+   "names": [
+    "Amoxicillin trihydrate impurity i",
+    "(2R)-2-azaniumyl-2-(4-hydroxyphenyl)acetate",
+    "(R)-alpha-Amino-4-hydroxybenzeneacetic acid"
+   ]
+  },
+  "Dab": {
+   "cid": 134490,
+   "inchikey": "OGNSCSPNOLGXSM-VKHMYHEASA-N",
+   "names": [
+    "L-.alpha.,.gamma.-diaminobutyric acid",
+    "(S)-2,4-Diaminobutanoicacid",
+    "(S)-2,4-diamino-Butanoate"
+   ]
+  },
+  "Dap": {
+   "cid": 97328,
+   "inchikey": "PECYZEOJVXMISF-REOHCLBHSA-N",
+   "names": [
+    "L-.alpha.,.beta.-diaminopropionic acid",
+    "(S)-2,3-diaminopropanoate",
+    "2_3-diaminopropionate"
+   ]
+  },
+  "Dha": {
+   "cid": 123991,
+   "inchikey": "UQBOJOOOTLPNST-UHFFFAOYSA-N",
+   "names": [
+    "(alpha)-(beta)-di-dehydroalanine",
+    "2-ammonioprop-2-enoate",
+    ".alpha.,.beta.-didehydroalanine"
+   ]
+  },
+  "Dip": {
+   "cid": 162977,
+   "inchikey": "PECGVEGMRUZOML-AWEZNQCLSA-N",
+   "names": [
+    "(2S)-2-azaniumyl-3,3-diphenylpropanoate",
+    ".beta.-phenyl-l-phenylalanine",
+    "(S)-2-Amino-3,3-diphenyl-propionic acid"
+   ]
+  },
+  "Dpm": {
+   "cid": 865,
+   "inchikey": "GMKMEZVLHJARHF-UHFFFAOYSA-N",
+   "names": [
+    "D,L-meso-diaminoheptanedioate",
+    "DL-alpha,epsilon-Diaminopimelic acid",
+    "(2R,6R)-rel-2,6-Diaminoheptanedioic acid"
+   ]
+  },
+  "E": {
+   "cid": 33032,
+   "inchikey": "WHUUTDBJXJRKMK-VKHMYHEASA-N",
+   "names": [
+    "(2S)-2-amino-5-hydroxy-5-oxopentanoate;hydron",
+    "Lysine acetate impurity b",
+    "Poly-gamma-L-glutamic acid sodium salt"
+   ]
+  },
+  "Et_": {
+   "cid": 702,
+   "inchikey": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+   "names": [
+    "50 Pack Alcohol Hand Wipes-Aloe Scent",
+    "AMASS Pseudo Citrine Sanitizer Liquid",
+    "Abutol Sanitizing Pomegranate-Cherry Blossom"
+   ]
+  },
+  "F": {
+   "cid": 6140,
+   "inchikey": "COLNVLDHVKWLRT-QMMMGPOBSA-N",
+   "names": [
+    "(S)-alpha-Amino-beta-phenylpropionate",
+    "L-| cent-Amino-|?-phenyl-propions| centure",
+    "Lysine hydrochloride impurity b"
+   ]
+  },
+  "G": {
+   "cid": 750,
+   "inchikey": "DHMQDGOQFOQNFH-UHFFFAOYSA-N",
+   "names": [
+    "Glycine - Absolute carbon isotope ratio",
+    "Aminoacetic acid 1.5% in plastic container",
+    "1-aminomethyl-2-hydroxymethylbenzene"
+   ]
+  },
+  "Gla": {
+   "cid": 104625,
+   "inchikey": "UHBYWPGGCSDKFX-VKHMYHEASA-N",
+   "names": [
+    "(3S)-3-amino-1,1,3-propanetricarboxylic acid",
+    "gamma-carboxy-glutamic acid zwitterion",
+    "(3S)-3-aminopropane-1,1,3-tricarboxylic acid"
+   ]
+  },
+  "Glc": {
+   "cid": 757,
+   "inchikey": "AEMRFAOFKBGASW-UHFFFAOYSA-N",
+   "names": [
+    "GLYCOLIC Acid 35 Skin Chemical Peel",
+    "(2S)-2-hydroxy monocarboxylic acid",
+    ".alpha.-Hydroxyacetic acid"
+   ]
+  },
+  "Gly_al": {
+   "cid": 363,
+   "inchikey": "LYIIBVSRGJSHAV-UHFFFAOYSA-N",
+   "names": [
+    "H-Gly-2-Chlorotrityl resin"
+   ]
+  },
+  "Gly_allyl": {
+   "cid": 167529,
+   "inchikey": "WNNNWFKQCKFSDK-BYPYZUCNSA-N",
+   "names": [
+    "L-|A inverted exclamation mark-Allyl-Gly",
+    "(2S)-2-azaniumylpent-4-enoate",
+    "3-vinyl-l-alanine"
+   ]
+  },
+  "Gly_cPr": {
+   "cid": 1501944,
+   "inchikey": "BUSBCPMSNBMUMT-BYPYZUCNSA-N",
+   "names": [
+    "L- alpha -Cyclopropylglycine",
+    "(2S)-2-azaniumyl-2-cyclop"
+   ]
+  },
+  "Gly_ol": {
+   "cid": 700,
+   "inchikey": "HZAXFHJVJLSVMW-UHFFFAOYSA-N",
+   "names": [
+    "beta-Aminoethyl alcohol beta-Ethanolamine",
+    "3-phenyl-5-p-tolyl-1H-[1,2,4]triazole",
+    "2-Aminoaethanol [German]"
+   ]
+  },
+  "H": {
+   "cid": 6274,
+   "inchikey": "HNDVDQJCIGZPNO-YFKPBYRVSA-N",
+   "names": [
+    "(S)-alpha-Amino-1H-imidazole-4-propanoate",
+    "L-beta-(4-Imidazolyl)-alpha-alanin",
+    "L-Histidine, non-animal source"
+   ]
+  },
+  "Hcy": {
+   "cid": 91552,
+   "inchikey": "FFFHZYDWPBMWHY-VKHMYHEASA-N",
+   "names": [
+    "(S)-2-amino-4-mercapto-Butanoate",
+    "(2S)-2-azaniumyl-4-sulfanylbutanoate",
+    "(2S)-2-amino-4-sulfanylbutanoic acid"
+   ]
+  },
+  "His_1Bn": {
+   "cid": 193138,
+   "inchikey": "NMXSWQMJOZUQKY-LBPRGKRZSA-N",
+   "names": [
+    "1-(Phenylmethyl)-L-histidine"
+   ]
+  },
+  "His_1Me": {
+   "cid": 92105,
+   "inchikey": "BRMWTNUJHUMWMS-LURJTMIESA-N",
+   "names": [
+    "1-methyl histidine (L-form)",
+    "3-(1-Methylimidazol-4-yl)-L-alanine",
+    "Tele-methylhistidine"
+   ]
+  },
+  "His_3Me": {
+   "cid": 64969,
+   "inchikey": "JDHILDINMRGULE-LURJTMIESA-N",
+   "names": [
+    "3-N-Methyl-L-histidine Hydrate",
+    "Pros-methylhistidine",
+    "ntau-methylhistidine"
+   ]
+  },
+  "Hse": {
+   "cid": 12647,
+   "inchikey": "UKAUYVFTDYCKQA-VKHMYHEASA-N",
+   "names": [
+    "(2S)-2-amino-4-hydroxy-butanoic acid",
+    "(2S)-2-ammonio-4-hydroxybutanoate",
+    "Threonine EP Impurity A"
+   ]
+  },
+  "Hsl": {
+   "cid": 445963,
+   "inchikey": "QJPWUUJVYOJNMH-VKHMYHEASA-N",
+   "names": [
+    "L-homoserine lactone"
+   ]
+  },
+  "Hva": {
+   "cid": 6950703,
+   "inchikey": "JRHWHSJDIILJAT-BYPYZUCNSA-N",
+   "names": [
+    "(S)-2-Hydroxyvaleric acid",
+    "(S)-2-hydroxyvalericacid"
+   ]
+  },
+  "Hyl_5xi": {
+   "cid": 83228,
+   "inchikey": "YSMODUONRAFBET-AKGZTFGVSA-N",
+   "names": [
+    "L-alpha-(2-Aminoethoxyvinyl)glycine",
+    "Homoserine, O-(2-aminoethyl)-",
+    "2-Amino-4-(2-aminoethoxy)butanoic acid"
+   ]
+  },
+  "Hyp": {
+   "cid": 5810,
+   "inchikey": "PMMYEEVYMWASQN-DMTCNVIQSA-N",
+   "names": [
+    "(2S,4R)-2-carboxy-4-hydroxypyrrolidine",
+    "(2S,4R)-4-hydroxypyrrolidinium-2-carboxylate",
+    "trans-4-Hydroxy-L-proline, BioXtra, >=99.0%"
+   ]
+  },
+  "I": {
+   "cid": 6306,
+   "inchikey": "AGPKZVBTJJNPAG-WHFBIAKZSA-N",
+   "names": [
+    "(2S,3S)-alpha-Amino-beta-merthyl-n-valerate",
+    "L-Norvaline, 3-methyl-, erythro-",
+    "(2S,3S)-2-azaniumyl-3-methylpentanoate"
+   ]
+  },
+  "Iva": {
+   "cid": 6971275,
+   "inchikey": "GCHPUFAZSONQIV-YFKPBYRVSA-N",
+   "names": [
+    "(2S)-2-azaniumyl-2-methylbutanoate"
+   ]
+  },
+  "K": {
+   "cid": 5962,
+   "inchikey": "KDXKERNSBIXSRK-YFKPBYRVSA-N",
+   "names": [
+    "(S)-.alpha.,.epsilon.-Diaminocaproic acid",
+    "(2S)-2,6-diaminohexanoate;hydron",
+    "6-ammonio-L-norleucine"
+   ]
+  },
+  "L": {
+   "cid": 6106,
+   "inchikey": "ROHFNLRQFUQHCH-YFKPBYRVSA-N",
+   "names": [
+    ".alpha.-Amino-.gamma.-methylvaleric acid",
+    "Lysine hydrochloride impurity a",
+    "(2S)-2-azaniumyl-4-methylpentanoate"
+   ]
+  },
+  "L_OAla": {
+   "cid": 107689,
+   "inchikey": "JVTAAEKCZFNVCJ-REOHCLBHSA-N",
+   "names": [
+    "Chlorine Dioxide Teat Dip",
+    "L-(+)-Lactic acid, BioXtra, >=98% (titration)",
+    "(alpha)-Lactate"
+   ]
+  },
+  "L_OVal": {
+   "cid": 853180,
+   "inchikey": "NGEWQZIDQIYUNV-BYPYZUCNSA-N",
+   "names": [
+    "(+)-.alpha.-hydroxyisovaleric acid",
+    "2-(S)-hydroxyl-3-methyl-butyric acid",
+    "(+)-2-hydroxy-3-methylbutyric acid"
+   ]
+  },
+  "L_hArg(Et,Et)": {
+   "cid": 134819888,
+   "inchikey": "PWLYCRQCVMQUBU-VIFPVBQESA-N",
+   "names": [
+    "(E)-N6-(N,N'-diethylcarbamimidoyl)-L-lysine",
+    "Homoarginine Impurity 1",
+    "L-lysine, n6-(bis(ethylamino)methylene)-"
+   ]
+  },
+  "Leu_ol": {
+   "cid": 111307,
+   "inchikey": "VPSSPAXIFBTOHY-LURJTMIESA-N",
+   "names": [
+    "H-Leucinol-2-Chlorotrityl Resin",
+    "(1S)-1-(Hydroxymethyl)-3-methyl butylamine",
+    "(1S)-1-(hydroxymethyl)-3-methylbutylamine"
+   ]
+  },
+  "Lys_Ac": {
+   "cid": 92832,
+   "inchikey": "DTERQYGMUDWYAZ-ZETCQYMHSA-N",
+   "names": [
+    "N(epsilon)-acetyl-L-lysine",
+    "(2S)-6-(acetylamino)-2-aminohexanoic acid",
+    "N(zeta)-acetyllysine"
+   ]
+  },
+  "Lys_Boc": {
+   "cid": 2733283,
+   "inchikey": "VVQIIIAZJXTLRE-QMMMGPOBSA-N",
+   "names": [
+    "Nepsilon-((tert-butoxy)carbonyl)-L-lysine",
+    "H-Lys(Boc)-2-Chlorotrityl Resin",
+    "N-omega-(tert-Butoxycarbonyl)-L-lysine"
+   ]
+  },
+  "Lys_Me3": {
+   "cid": 440121,
+   "inchikey": "MXNRLFUSFKVQSK-QMMMGPOBSA-O",
+   "names": [
+    "(S)-2-amino-6-(trimethylammonio)hexanoic acid",
+    "Nepsilon-trimethyllysine",
+    "Trimethylllysine"
+   ]
+  },
+  "Lys_al": {
+   "cid": 447025,
+   "inchikey": "YUZOKOFJOOANSW-LURJTMIESA-N",
+   "names": [
+    "lysine aldehyde",
+    "lysinyl"
+   ]
+  },
+  "Lys_iPr": {
+   "cid": 7010704,
+   "inchikey": "CBAWNLIZBXJSFS-QMMMGPOBSA-N",
+   "names": [
+    "(S)-2-Amino-6-(isopropylamino)hexanoicacid",
+    "L-Lysine, N6-(1-methylethyl)-"
+   ]
+  },
+  "Lys_ol": {
+   "cid": 11607920,
+   "inchikey": "LTGPFZWZZNUIIK-LURJTMIESA-N",
+   "names": [
+    "1-Hexanol, 2,6-diamino-, (2S)-",
+    "L-Lysinol"
+   ]
+  },
+  "M": {
+   "cid": 6137,
+   "inchikey": "FFEARJCKVFRZRR-BYPYZUCNSA-N",
+   "names": [
+    "(S)-2-Amino-4-(methyl-sulfanyl)butanoic acid",
+    "L-gamma-Methylthio-alpha-aminobutyric acid",
+    "(2S)-2-amino-4-(methylsulfanyl)butanoate"
+   ]
+  },
+  "Mba": {
+   "cid": 46737704,
+   "inchikey": "CFPHMAVQAJGVPV-VKHMYHEASA-N",
+   "names": [
+    "(2S)-2-Sulfanylbutanoic acid",
+    "(S)-2-mercaptobutanoicacid",
+    "(s)-2-mercaptobutyric acid"
+   ]
+  },
+  "Me_": {
+   "cid": 887,
+   "inchikey": "OKKJLVBELUTLKV-UHFFFAOYSA-N",
+   "names": [
+    "Methanol for pesticide residue analysis",
+    "Alcool methylique [French]",
+    "Isopropyl Alcohol EP Impurity E"
+   ]
+  },
+  "Met_O": {
+   "cid": 158980,
+   "inchikey": "QEFRNWWLZKMPFJ-YGVKFDHGSA-N",
+   "names": [
+    "(2S)-2-amino-4-methylsulfinyl-butyric acid",
+    "(2S)-2-azaniumyl-4-methylsulfinylbutanoate",
+    "L-Methionine R-oxide"
+   ]
+  },
+  "Met_O2": {
+   "cid": 445282,
+   "inchikey": "UCUNFLYVYCGDHP-BYPYZUCNSA-N",
+   "names": [
+    "(2S)-2-azaniumyl-4-(methanesulfonyl)butanoate",
+    "(S)-2-Amino-4-(methylsulfonyl)butanoicacid",
+    "(S)-Amino-4-(methylsulphonyl)butyric acid"
+   ]
+  },
+  "Mpa": {
+   "cid": 642233,
+   "inchikey": "PMNLUUOXGOOLSP-REOHCLBHSA-N",
+   "names": [
+    "(2S)-2-sulfanylpropanoic acid"
+   ]
+  },
+  "Mpr": {
+   "cid": 6514,
+   "inchikey": "DKIDEFUBRARXTE-UHFFFAOYSA-N",
+   "names": [
+    ".beta.-Mercaptopropanoic acid",
+    "Deamino cysteine",
+    "Hydracrylic acid, 3-thio-"
+   ]
+  },
+  "MsO": {
+   "cid": 6395,
+   "inchikey": "AFVFQIVMOAPDHO-UHFFFAOYSA-N",
+   "names": [
+    "Aliphatic sulfonate",
+    "Methane sulfonic acid",
+    "Methanesulfonic acid pound MSA pound(c)"
+   ]
+  },
+  "N": {
+   "cid": 6267,
+   "inchikey": "DCXYFEDJOCDNAF-REOHCLBHSA-N",
+   "names": [
+    "(2S)-4-amino-2-azaniumyl-4-oxobutanoate",
+    "Aspartic acid .beta. amide",
+    "(2S)-2,4-diamino-4-oxobutanoic acid"
+   ]
+  },
+  "NHBn_": {
+   "cid": 2794173,
+   "inchikey": "LVCDXCQFSONNDO-UHFFFAOYSA-N",
+   "names": [
+    "Benzenemethanamine, N-hydroxy-",
+    "N-benzyl hydroxylalmine",
+    "N-Benzylhydroxylamine, 98+%"
+   ]
+  },
+  "NHEt": {
+   "cid": 6341,
+   "inchikey": "QUSNBJAOOMFDIB-UHFFFAOYSA-N",
+   "names": [
+    "Aethylamine [German]",
+    "1,1,2,2,2-pentadeuterioethanamine",
+    "Ethamine"
+   ]
+  },
+  "NHMe": {
+   "cid": 6329,
+   "inchikey": "BAVYZALUXZFZLV-UHFFFAOYSA-N",
+   "names": [
+    "Gadodiamide hydrate impurity c",
+    "Methyl Of Gamma-N-Methylasparagine",
+    "Methylamine (ca. 40% in Water, ca. 12mol/L)"
+   ]
+  },
+  "NMe23Abz": {
+   "cid": 66837,
+   "inchikey": "NEGFNJRAUMCZMY-UHFFFAOYSA-N",
+   "names": [
+    "3(dimethylamino)benzoicacid",
+    "3-Aminobenzoic acid, N,N-dimethyl-",
+    "3-Dimethylaminobenzoic acid"
+   ]
+  },
+  "NMe24Abz": {
+   "cid": 12092,
+   "inchikey": "YDIYEOMDOWUDTJ-UHFFFAOYSA-N",
+   "names": [
+    "4(nndimethylamino)benzoicacid",
+    "para-dimethylaminobenzoic acid",
+    "4-Dimethylaminobenzoicacid"
+   ]
+  },
+  "NMe2Abz": {
+   "cid": 67069,
+   "inchikey": "WVMBPWMAQDVZCM-UHFFFAOYSA-N",
+   "names": [
+    "2(nmethyl)aminobenzoicacid",
+    "2methylaminobenzoicacid",
+    "Anthranilic acid, N-methyl-"
+   ]
+  },
+  "NMe4Abz": {
+   "cid": 66345,
+   "inchikey": "ZVIDMSBTYRSMAR-UHFFFAOYSA-N",
+   "names": [
+    "p-Carboxy-N-methylaniline",
+    "4-(Methylamino)benzoicAcid",
+    "4-Aminobenzoic acid, N-methyl-"
+   ]
+  },
+  "NMebAla": {
+   "cid": 75891,
+   "inchikey": "VDIPNVCWMXZNFY-UHFFFAOYSA-N",
+   "names": [
+    "beta-alanine, N-methyl-, hydrochloride",
+    "3-(methylamino)propionic acid, AldrichCPR",
+    "3-(methylamino)propanoicacid"
+   ]
+  },
+  "Nle": {
+   "cid": 21236,
+   "inchikey": "LRQKBLKVPFOOQJ-YFKPBYRVSA-N",
+   "names": [
+    "(S)-2-amino-Hexanoate",
+    ".alpha.-Aminocaproic acid",
+    "(2S)-2-aminohexanoic acid"
+   ]
+  },
+  "Nva": {
+   "cid": 65098,
+   "inchikey": "SNDPXSYFESPGGJ-BYPYZUCNSA-N",
+   "names": [
+    "(S)-2-amino-pentanoic acid",
+    "L-.alpha.-aminovaleric acid",
+    "L-Norvaline, arginase inhibitor"
+   ]
+  },
+  "OBn_": {
+   "cid": 6451509,
+   "inchikey": "YVJRCWCFDJYONJ-UHFFFAOYSA-N",
+   "names": [
+    "Benzyl hydroperoxide",
+    "Hydroperoxide, phenylmethyl",
+    "phenylmethaneperoxol"
+   ]
+  },
+  "OEt": {
+   "cid": 702,
+   "inchikey": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+   "names": [
+    "50 Pack Alcohol Hand Wipes-Aloe Scent",
+    "AMASS Pseudo Citrine Sanitizer Liquid",
+    "Abutol Sanitizing Pomegranate-Cherry Blossom"
+   ]
+  },
+  "OLeu": {
+   "cid": 83697,
+   "inchikey": "LVRFTAZAXQPQHI-YFKPBYRVSA-N",
+   "names": [
+    "(+)-.alpha.-hydroxyisocaproic acid",
+    "(+)-2-Hydroxyisocaproate",
+    "(2S)-2-hydroxy-4-methylpentanoate"
+   ]
+  },
+  "OMe_": {
+   "cid": 18199,
+   "inchikey": "MEUKEBNAABNAEX-UHFFFAOYSA-N",
+   "names": [
+    "Hydroperoxide, methyl",
+    "methaneperoxol"
+   ]
+  },
+  "Oic_3axi_7axi": {
+   "cid": 10198168,
+   "inchikey": "CQYBNXGHMBNGCG-RRQHEKLDSA-N",
+   "names": [
+    "(2S)-Octahydro-1H-indole-2-carboxylicacid",
+    "(2S)-Octahydroindole-2-carboxylic acid"
+   ]
+  },
+  "Orn": {
+   "cid": 6262,
+   "inchikey": "AHLPHDHHMVZTML-BYPYZUCNSA-N",
+   "names": [
+    "(S)-alpha,delta-Diaminovaleric acid",
+    "Lysine acetate impurity e",
+    "(2S)-2,5-diaminopentanoate;hydron"
+   ]
+  },
+  "OtBu": {
+   "cid": 6386,
+   "inchikey": "DKGAVHZHDRPRBM-UHFFFAOYSA-N",
+   "names": [
+    "Alcool butylique tertiaire [French]",
+    "2-Methyl-2-propanol (tert-Butanol)",
+    "1,1-dimethyl ethanol"
+   ]
+  },
+  "P": {
+   "cid": 145742,
+   "inchikey": "ONIBWKKTOPOVIA-BYPYZUCNSA-N",
+   "names": [
+    "(2S)-pyrrolidin-1-ium-2-carboxylate",
+    "(2S)-pyrrolidine-2-carboxylic acid",
+    "L-Proline (HPMC encapsulated)"
+   ]
+  },
+  "Pen": {
+   "cid": 92863,
+   "inchikey": "VVNCNSJFMMFHPL-GSVOUGTGSA-N",
+   "names": [
+    "(2R)-2-amino-3-methyl-3-sulfanylbutanoic acid",
+    "(2R)-2-azaniumyl-3-methyl-3-sulfanylbutanoate",
+    "(R)-2-Amino-3-mercapto-3-methylbutanoic acid"
+   ]
+  },
+  "Ph": {
+   "cid": 241,
+   "inchikey": "UHOVQNZJYSORNB-UHFFFAOYSA-N",
+   "names": [
+    "Benzene (including benzene from gasoline)",
+    "erythro-Phenyl-2-piperidyl-carbinol,(-)",
+    "Benzene 10 microg/mL in Methanol"
+   ]
+  },
+  "Phe_2F": {
+   "cid": 716319,
+   "inchikey": "NYCRCTMDYITATC-QMMMGPOBSA-N",
+   "names": [
+    "(S)-2-Amino-3-(2-fluorophenyl)propionic Acid",
+    "(S)-3-(2-fluorophenyl)-2-aminopropanoic acid",
+    "2-Fluoro-L-phenylalanine"
+   ]
+  },
+  "Phe_2Me": {
+   "cid": 2761493,
+   "inchikey": "NHBKDLSKDKUGSB-VIFPVBQESA-N",
+   "names": [
+    "(2S)-2-amino-3-(o-tolyl)propanoic acid",
+    "2-Methylphenyl-L-alanine",
+    "2-Methylphenylalanine"
+   ]
+  },
+  "Phe_34diCl": {
+   "cid": 2761498,
+   "inchikey": "NRCSJHVDTAAISV-QMMMGPOBSA-N",
+   "names": [
+    "3,4-Dichloro-L-phenylalanine",
+    "3,4-di chlorophenylalanine",
+    "3,4-dichlorophenylalanine"
+   ]
+  },
+  "Phe_3Cl": {
+   "cid": 2761492,
+   "inchikey": "JJDJLFDGCUYZMN-QMMMGPOBSA-N",
+   "names": [
+    "(2S)-2-amino-3-(3-chlorophenyl)propanoic acid",
+    "(2S)-2-azaniumyl-3-(3-chlorophenyl)propanoate",
+    "L-3-Chlorophenylalanine"
+   ]
+  },
+  "Phe_3F": {
+   "cid": 716315,
+   "inchikey": "VWHRYODZTDMVSS-QMMMGPOBSA-N",
+   "names": [
+    "(S)-2-Amino-3-(3-fluorophenyl)propionic Acid",
+    "3-Fluoro-L-phenylalanine",
+    "L-3-fluorophenylalanine"
+   ]
+  },
+  "Phe_4Br": {
+   "cid": 671214,
+   "inchikey": "PEMUHKUIQHFMTH-QMMMGPOBSA-N",
+   "names": [
+    "4-Bromo-L-phenylalanine, >=98.0%",
+    "L-4-Bromophenylalanine"
+   ]
+  },
+  "Phe_4Cl": {
+   "cid": 736190,
+   "inchikey": "NIGWMJHCCYYCSF-QMMMGPOBSA-N",
+   "names": [
+    "(2S)-2-amino-3-(4-chlorophenyl)propanoic acid",
+    "4-chlorophenylalanine--hydrogen bromide",
+    "(2S)-2-amino-3-(4-chlorophenyl)propionic acid"
+   ]
+  },
+  "Phe_4F": {
+   "cid": 716312,
+   "inchikey": "XWHHYOYVRVGJJY-QMMMGPOBSA-N",
+   "names": [
+    "(2S)-2-azaniumyl-3-(4-fluorophenyl)propanoate",
+    "(L)-4-Fluoro-phenylalanine",
+    "(S)-2-Amino-3-(4-fluorophenyl)propionic Acid"
+   ]
+  },
+  "Phe_4I": {
+   "cid": 134497,
+   "inchikey": "PZNQZSRPDOEBMS-QMMMGPOBSA-N",
+   "names": [
+    "(2S)-2-azaniumyl-3-(4-iodophenyl)propanoate",
+    "para-Iodophenylalanine"
+   ]
+  },
+  "Phe_4Me": {
+   "cid": 151513,
+   "inchikey": "DQLHSFUMICQIMB-VIFPVBQESA-N",
+   "names": [
+    "(S)-2-Amino-3-(p-tolyl)propanoic acid",
+    "(2S)-2-azaniumyl-3-(4-methylphenyl)propanoate",
+    "(S)-2-amino-3-p-tolylpropanoic acid"
+   ]
+  },
+  "Phe_4NH2": {
+   "cid": 151001,
+   "inchikey": "CMUHFUGDYMFHEI-QMMMGPOBSA-N",
+   "names": [
+    "(2S)-2-amino-3-(4-aminophenyl)propanoic acid",
+    "(2S)-3-(4-aminophenyl)-2-azaniumylpropanoate",
+    "(S)-2-Amino-3-(4-aminophenyl)propionic acid"
+   ]
+  },
+  "Phe_4NO2": {
+   "cid": 13706,
+   "inchikey": "GTVVZTAFGPQSPC-QMMMGPOBSA-N",
+   "names": [
+    "4-Nitro-L-Phenylalanine Hydrate",
+    "L-beta-Nitrophenylalanine",
+    "(2S)-2-amino-3-(4-nitrophenyl)propionic acid"
+   ]
+  },
+  "Phe_ab_dehydro": {
+   "cid": 193432,
+   "inchikey": "YWIQQKOKNPPGDO-UHFFFAOYSA-N",
+   "names": [
+    "2,3-didehydrophenylalanine zwitterion",
+    "2-Amino-3-phenyl-2-Propenoicacid",
+    "aminocinnamic acid"
+   ]
+  },
+  "Phe_bbdiMe": {
+   "cid": 54167473,
+   "inchikey": "OSRAZODPBFLQJP-SECBINFHSA-N",
+   "names": [
+    "beta,beta-Dimethyl-phenylalanin"
+   ]
+  },
+  "Phe_ol": {
+   "cid": 447213,
+   "inchikey": "STVVMTBJNDTZBF-VIFPVBQESA-N",
+   "names": [
+    "((1S)-1-Hydroxymethyl-2-phenylethyl)amine",
+    "(1S)-1-Benzyl-2-hydroxyethylamine",
+    "(S)-(-)-2-arnino-3-phenyl-1-propanol"
+   ]
+  },
+  "Phg": {
+   "cid": 99291,
+   "inchikey": "ZGUNAGUHMKGQNY-ZETCQYMHSA-N",
+   "names": [
+    "Benzeneacetic acid, alpha-amino-, (alphaS)-",
+    "(2S)-2-ammonio-2-phenylacetate",
+    "(2S)-2-amino-2-phenylacetic acid"
+   ]
+  },
+  "Phg_ol": {
+   "cid": 134797,
+   "inchikey": "IJXJGQCXFSSHNL-MRVPVSSYSA-N",
+   "names": [
+    "(S)-2-hydroxy-1-phenyl ethylamine",
+    "Benzeneethanol, beta-amino-, (S)-",
+    "L-b-Amino-phenethyl alcohol"
+   ]
+  },
+  "Pip": {
+   "cid": 439227,
+   "inchikey": "HXEACLLIILLPRG-YFKPBYRVSA-N",
+   "names": [
+    "(2S)-piperidine-2-carboxylic acid",
+    "L-Pipecolic acid, Proline homolog., 99%",
+    "(-)-Pipecolate"
+   ]
+  },
+  "Pro_4Me3OH": {
+   "cid": 53731613,
+   "inchikey": "COHFSKKGVFGDFH-QHWRUIEBSA-N",
+   "names": [
+    "3-Hydroxy-4-methylproline"
+   ]
+  },
+  "Pro_al": {
+   "cid": 445997,
+   "inchikey": "JIDDDPVQQUHACU-YFKPBYRVSA-N",
+   "names": [
+    "L-Proline-2-chlorotrityl resin",
+    "prolinyl"
+   ]
+  },
+  "Pro_ol": {
+   "cid": 640091,
+   "inchikey": "HVVNJUAVDAZWCB-YFKPBYRVSA-N",
+   "names": [
+    "(S)-(+)-Prolinol, 95per cent",
+    "(2S)-2-(hydroxymethyl)pyrrolidine",
+    "2-Pyrrolidinemethanol hydrochloride"
+   ]
+  },
+  "Pyr": {
+   "cid": 7405,
+   "inchikey": "ODHCTXKNWHHXJC-VKHMYHEASA-N",
+   "names": [
+    "(S)-(-)-gamma-Butyrolactam-gamma-carboxylate",
+    "(-)-2-Pyrrolidone-5-carboxylic acid",
+    "2-Benzothiazolesulfenic acid morpholide"
+   ]
+  },
+  "Q": {
+   "cid": 5961,
+   "inchikey": "ZDXPYRJPNDTMRX-VKHMYHEASA-N",
+   "names": [
+    "(2S)-5-amino-2-azaniumyl-5-oxopentanoate",
+    "(S)-2-Aminopentane-dioic acid 5-amide",
+    "(2S)-2,5-diamino-5-oxopentanoic acid"
+   ]
+  },
+  "R": {
+   "cid": 6322,
+   "inchikey": "ODKSFYDXXFIFQN-BYPYZUCNSA-N",
+   "names": [
+    "L-alpha-Amino-delta-guanidinovalerate",
+    "L-Arginine; Lysine Acetate EP Impurity F",
+    "5-[(aminoiminomethyl)amino]-L-Norvaline"
+   ]
+  },
+  "S": {
+   "cid": 5951,
+   "inchikey": "MTCFGRXMJLQNBG-REOHCLBHSA-N",
+   "names": [
+    "(S)-alpha-Amino-beta-hydroxypropionate",
+    "Fudosteine Impurity 41; Glycine EP ImpurityG",
+    "(2S)-2-azaniumyl-3-hydroxypropanoate"
+   ]
+  },
+  "Ser_Bn": {
+   "cid": 78457,
+   "inchikey": "IDGQXGPQOGUGIX-VIFPVBQESA-N",
+   "names": [
+    "(2S)-2-amino-3-(benzyloxy)propanoic acid",
+    "(2S)-2-amino-3-benzoxy-propionic acid",
+    "(2S)-2-ammonio-3-phenylmethoxypropanoate"
+   ]
+  },
+  "Ser_PO3H2": {
+   "cid": 68841,
+   "inchikey": "BZQFBWGGLXLEPQ-REOHCLBHSA-N",
+   "names": [
+    "(+)-L-Serine dihydrogen phosphate (ester)",
+    "(2S)-2-azaniumyl-3-phosphonooxypropanoate",
+    "<span class='DL'>L</span>-Serine-O-phosphate"
+   ]
+  },
+  "Sta_3S4S": {
+   "cid": 123915,
+   "inchikey": "DFVFTMTWCUHJBL-BQBZGAKWSA-N",
+   "names": [
+    "Statine Hydrochloride"
+   ]
+  },
+  "Sta_3xi4xi": {
+   "cid": 3387569,
+   "inchikey": "DFVFTMTWCUHJBL-UHFFFAOYSA-N",
+   "names": [
+    "Statine Hydrochloride"
+   ]
+  },
+  "T": {
+   "cid": 6288,
+   "inchikey": "AYFVYJQAPQTCCC-GBXIJSLDSA-N",
+   "names": [
+    "L-alpha-Amino-beta-hydroxybutyrate",
+    "Lysine hydrochloride impurity c",
+    "(2S,3R)-2-azaniumyl-3-hydroxybutanoate"
+   ]
+  },
+  "Thi": {
+   "cid": 146719,
+   "inchikey": "WTOFYLAWDLQMBZ-LURJTMIESA-N",
+   "names": [
+    "(2S)-2-amino-3-(thiophen-2-yl)propanoic acid",
+    "3-Thiophenepropanoic acid, alpha-amino-",
+    "(2S)-2-amino-3-thiophen-2-ylpropanoic acid"
+   ]
+  },
+  "Thr_PO3H2": {
+   "cid": 3246323,
+   "inchikey": "USRGIUJOYOXOQJ-GBXIJSLDSA-N",
+   "names": [
+    "L-Threonine, dihydrogen phosphate (ester)",
+    "(2S,3R)-2-amino-3-(phosphonooxy)butanoicacid",
+    "(2S,3R)-2-amino-3-phosphonooxybutanoic acid"
+   ]
+  },
+  "Thr_ol": {
+   "cid": 7020320,
+   "inchikey": "MUVQIIBPDFTEKM-IMJSIDKUSA-N",
+   "names": [
+    "(2S,3S)-2-Amino-1,3-butanediol",
+    "D(-)-Threoninol"
+   ]
+  },
+  "Thz": {
+   "cid": 93176,
+   "inchikey": "DZLNHFMRPBPULJ-VKHMYHEASA-N",
+   "names": [
+    "Pidotimod Impurity (L-Thioproline)",
+    "(4R)-1,3-thiazolidin-3-ium-4-carboxylate",
+    "(4R)-4-Thiazolidinecarboxylic acid"
+   ]
+  },
+  "Tic": {
+   "cid": 2733226,
+   "inchikey": "BWKMGYQJPOAASG-VIFPVBQESA-N",
+   "names": [
+    "L-Porretine"
+   ]
+  },
+  "Tos": {
+   "cid": 6101,
+   "inchikey": "JOXIMZWYDAKGHI-UHFFFAOYSA-N",
+   "names": [
+    "4-methyl benzene sulfonic acid",
+    "Para-toluene sulfonate",
+    "Tizanidine hydrochloride impurity i"
+   ]
+  },
+  "Trp_5OH": {
+   "cid": 439280,
+   "inchikey": "LDCYZAJDBXYCGN-VIFPVBQESA-N",
+   "names": [
+    "5-Hydroxyl-L-tryptophan",
+    "L-2-Amino-3-(5-hydroxyindolyl)propionic acid",
+    "L-5-Hydroxytryptophan dihydrate"
+   ]
+  },
+  "Trp_Me": {
+   "cid": 676159,
+   "inchikey": "ZADWXFSZEAPBJS-JTQLQIEISA-N",
+   "names": [
+    "1-Methyl-L-tryptophan",
+    "1-Methyl-L-tryptophane"
+   ]
+  },
+  "Tyr_26diMe": {
+   "cid": 124247,
+   "inchikey": "LSNDLIKCFHLFKO-JTQLQIEISA-N",
+   "names": [
+    "(S)-2,6-dimethyltyrosine"
+   ]
+  },
+  "Tyr_35diI": {
+   "cid": 9305,
+   "inchikey": "NYPYHUZRZVSYKL-ZETCQYMHSA-N",
+   "names": [
+    "3,5-Diiodo-L-tyrosine dihydrate, crystalline",
+    "Liothyronine Sodium EP Impurity B",
+    "3,5-Diiodo-4-Hydroxy-beta-Phenylalanine"
+   ]
+  },
+  "Tyr_3I": {
+   "cid": 439744,
+   "inchikey": "UQTZMGFTRHFAAM-ZETCQYMHSA-N",
+   "names": [
+    "Levothyroxine Impurity 18;3-Iodo-L-Tyrosine",
+    "3-Iodo-4-hydroxyphenylalanine",
+    "3-Monoiodo-L-tyrosine"
+   ]
+  },
+  "Tyr_3NO2": {
+   "cid": 65124,
+   "inchikey": "FBTSQILOGYXGMD-LURJTMIESA-N",
+   "names": [
+    "3-nitrotyrosine--hydrogen chloride",
+    "3-Nitro-L-tyrosine, crystalline",
+    "Meta-Nitro-Tyrosine"
+   ]
+  },
+  "Tyr_3OH": {
+   "cid": 6047,
+   "inchikey": "WTDRDQBEARUVNC-LURJTMIESA-N",
+   "names": [
+    "L-beta-(3,4-Dihydroxyphenyl)-alpha-alanine",
+    "L-DOPA (3,4-Dihydroxy-L-phenylalanine)",
+    "Levodopa;3,4-Dihydroxyphenylalanine"
+   ]
+  },
+  "Tyr_Bn": {
+   "cid": 725701,
+   "inchikey": "KAFHLONDOVSENM-HNNXBMFYSA-N",
+   "names": [
+    "(S)-2-AMino-3-(4-benzyloxyphenyl)propanoic",
+    "4-(Benzyloxy)phenylalanine #",
+    "L-Tyrosine, O-(phenylmethyl)-"
+   ]
+  },
+  "Tyr_Me": {
+   "cid": 2723935,
+   "inchikey": "GEYBMYRBIABFTA-VIFPVBQESA-N",
+   "names": [
+    "(2s)2amino3(4methoxyphenyl)propanoicacid",
+    "(2s)2ammonio3(4methoxyphenyl)propanoate",
+    "(r)b(pmethoxyphenyl)alanine"
+   ]
+  },
+  "Tyr_PO3H2": {
+   "cid": 30819,
+   "inchikey": "DCWXELXMIBXGTH-QMMMGPOBSA-N",
+   "names": [
+    "L-Tyrosine, dihydrogen phosphate (ester)",
+    "L-3-(4-Hydroxyphenyl)alanine 4'-phosphate",
+    "H-Tyr(H2PO3)-OH; L-Tyrosine-O-phosphate"
+   ]
+  },
+  "Tyr_Ph4OH": {
+   "cid": 5461103,
+   "inchikey": "KKCIOUWDFWQUBT-AWEZNQCLSA-N",
+   "names": [
+    ".beta.-(p-hydroxyphenoxy)phenylalanine",
+    "L-Tyrosine, O-(4-hydroxyphenyl)-",
+    "Desiodothyroxine"
+   ]
+  },
+  "Tyr_SO3H": {
+   "cid": 514186,
+   "inchikey": "CIQHWLTYGMYQQR-QMMMGPOBSA-N",
+   "names": [
+    "L-Tyrosine, hydrogen sulfate (ester)",
+    "Sulfotyrosine"
+   ]
+  },
+  "Tza": {
+   "cid": 2761495,
+   "inchikey": "WBZIGVCQRXJYQD-YFKPBYRVSA-N",
+   "names": [
+    "4-Thiazolepropanoic acid, alpha-amino-, (S)-",
+    "(S)-2-(thiazol-4-ylamino)propanoic acid",
+    "3-(4-Thiazoyl)-L-alanine"
+   ]
+  },
+  "V": {
+   "cid": 6287,
+   "inchikey": "KZSNJWFQEVHDMF-BYPYZUCNSA-N",
+   "names": [
+    "(S)-alpha-Amino-beta-methylbutyrate",
+    "Lysine acetate impurity d",
+    "(2S)-2-amino-3-methylbutanoate;hydron"
+   ]
+  },
+  "Val_3OH": {
+   "cid": 192763,
+   "inchikey": "LDRFQSZFVGJGGP-GSVOUGTGSA-N",
+   "names": [
+    "L-.beta.-hydroxyvaline",
+    "(s)-2-amino-3-hydroxy-3-methylbutanoicacid",
+    "(s)-3-hydroxy-3-methyl-2-aminobutanoic acid"
+   ]
+  },
+  "Val_ol": {
+   "cid": 640993,
+   "inchikey": "NWYYWIJOWOLJNR-RXMQYKEDSA-N",
+   "names": [
+    "[(S)-1-(Hydroxymethyl)-2-methylpropyl]amine",
+    "(1S)-1-Isopropyl-2-hydroxyethylamine",
+    "(+)-(S)-Valinol"
+   ]
+  },
+  "W": {
+   "cid": 6305,
+   "inchikey": "QIVBCDIJIAJPQS-VIFPVBQESA-N",
+   "names": [
+    "alpha-Amino-beta-(3-indolyl)-propionic acid",
+    "(2S)-2-azaniumyl-3-(1H-indol-3-yl)propanoate",
+    "(S)-1H-Indole-3-alanine"
+   ]
+  },
+  "Wil": {
+   "cid": 440053,
+   "inchikey": "FACUYWPMDKTVFU-BYPYZUCNSA-N",
+   "names": [
+    "3-(Uracil-1-yl)-L-alanine",
+    "(-)-Willardiine"
+   ]
+  },
+  "Y": {
+   "cid": 6057,
+   "inchikey": "OUYCCCASQSFEME-QMMMGPOBSA-N",
+   "names": [
+    "(S)-alpha-amino-4-hydroxy-Benzenepropanoate",
+    "beta-(p-Hydroxyphenyl)alanine",
+    "L-Tyrosine (plant origin)"
+   ]
+  },
+  "_Bn": {
+   "cid": 1140,
+   "inchikey": "YXFVVABEGXRONW-UHFFFAOYSA-N",
+   "names": [
+    "Benzyl Alcohol Impurity 8",
+    "2-methyl benzene",
+    "Methane, phenyl-"
+   ]
+  },
+  "_Et": {
+   "cid": 6324,
+   "inchikey": "OTMSDBZUPAUEDD-UHFFFAOYSA-N",
+   "names": [
+    "Bimethyl",
+    "Dimethyl",
+    "Ethyl hydride"
+   ]
+  },
+  "_Me": {
+   "cid": 297,
+   "inchikey": "VNWKTOKETHGBQD-UHFFFAOYSA-N",
+   "names": [
+    "Carboxyl Graphene Water Dispersion",
+    "Active Carbon (Granulate 1-2 mm)",
+    "Methane in gaseus state"
+   ]
+  },
+  "_NHBn": {
+   "cid": 7504,
+   "inchikey": "WGQKYBSKWIADBV-UHFFFAOYSA-N",
+   "names": [
+    "Benzylamine, redistilled from glass",
+    "(Aminomethyl)benzene",
+    "Benzylamine on polystyrene, 2.0-3.0 mmol/g"
+   ]
+  },
+  "_OBn": {
+   "cid": 244,
+   "inchikey": "WVDDGKGOMKODPV-UHFFFAOYSA-N",
+   "names": [
+    "Benzyl alcohol, tested according to Ph.Eur.",
+    "Alcool benzylique [INN-French]",
+    "(Hydroxymethyl)benzene"
+   ]
+  },
+  "_OMe": {
+   "cid": 887,
+   "inchikey": "OKKJLVBELUTLKV-UHFFFAOYSA-N",
+   "names": [
+    "Alcool methylique [French]",
+    "Isopropyl Alcohol EP Impurity E",
+    "Methanol for pesticide residue analysis"
+   ]
+  },
+  "aHyp": {
+   "cid": 440015,
+   "inchikey": "PMMYEEVYMWASQN-IMJSIDKUSA-N",
+   "names": [
+    "LProline, 4hydroxy,",
+    "cis-4-Hydroxypyrrolidine-2-carboxylic acid",
+    "(2S,4S)()4Hydroxy2pyrrolidinecarboxylic acid"
+   ]
+  },
+  "aIle": {
+   "cid": 99288,
+   "inchikey": "AGPKZVBTJJNPAG-UHNVWZDZSA-N",
+   "names": [
+    "(2S,3R)-2-amino-3-methyl-pentanoic acid",
+    "(2S3R)-2-Amino-3-methylpentanoic acid",
+    "L-Norvaline, 3-methyl-, threo-"
+   ]
+  },
+  "aMePhe": {
+   "cid": 2724754,
+   "inchikey": "HYOWVAAEQCNGLE-JTQLQIEISA-N",
+   "names": [
+    "|A inverted exclamation mark-Benzyl-L-Ala",
+    "(2S)-2-azaniumyl-2-methyl-3-phenylpropanoate",
+    "(S)-alpha-Methylphenylalanine"
+   ]
+  },
+  "aMePro": {
+   "cid": 6993663,
+   "inchikey": "LWHHAVWYGIBIEU-LURJTMIESA-N",
+   "names": [
+    "(2S)-2-Methyl-2-pyrrolidiniumcarboxylate"
+   ]
+  },
+  "aMeTyr": {
+   "cid": 441350,
+   "inchikey": "NHTGHBARYWONDQ-JTQLQIEISA-N",
+   "names": [
+    "|A inverted exclamation mark-Methyl-L-Tyr",
+    "(-)-.alpha.-methyl-l-tyrosine",
+    "(S)-2-(4-Hydroxybenzyl)-2-aminopropanoic Acid"
+   ]
+  },
+  "aMeTyr_3OH": {
+   "cid": 38853,
+   "inchikey": "CJCSPKMFHVPWAR-JTQLQIEISA-N",
+   "names": [
+    "alpha-Methyl-L-dopa sesquihydrate",
+    "methyldopate hydrochloride (ester)",
+    "levo-3-(3,4-Dihydroxyphenyl)-2-methylalanine"
+   ]
+  },
+  "aThr": {
+   "cid": 99289,
+   "inchikey": "AYFVYJQAPQTCCC-HRFVKAFMSA-N",
+   "names": [
+    "(s)-3-amino-3-cyclohexyl-propionic acid",
+    "(2S,3S)-2-ammonio-3-hydroxybutanoate",
+    "(2S,3S)-2-Amino-3-hydroxybutyric acid"
+   ]
+  },
+  "ac": {
+   "cid": 176,
+   "inchikey": "QTBSBXVTEAMEQO-UHFFFAOYSA-N",
+   "names": [
+    "Acetic acid, purified by double-distillation",
+    "Acetasol hc component acetic acid, glacial",
+    "Acetic acid 0.25% in plastic container"
+   ]
+  },
+  "am": {
+   "cid": 222,
+   "inchikey": "QGZKDVFQNNGYKY-UHFFFAOYSA-N",
+   "names": [
+    "Ammonia2.0mol/L in MeOH, EnergySeal",
+    "17D - Ammonia, Phosphate and Nitrogen",
+    "primary arylamine"
+   ]
+  },
+  "bAla": {
+   "cid": 239,
+   "inchikey": "UCMIRNVEIXFBKS-UHFFFAOYSA-N",
+   "names": [
+    "Pamidronate disodium pentahydrate impurity a",
+    "Hydrochloride, beta-Alanine",
+    ".omega.-Aminopropionic acid"
+   ]
+  },
+  "dA": {
+   "cid": 71080,
+   "inchikey": "QNAYBMKLOCPYGJ-UWTATZPHSA-N",
+   "names": [
+    "(2R)-2-(amino)propanoic acid",
+    "D-alpha-Aminopropionate",
+    "delta-2-Aminopropionic acid"
+   ]
+  },
+  "dC": {
+   "cid": 92851,
+   "inchikey": "XUJNEKJLAYXESH-UWTATZPHSA-N",
+   "names": [
+    "(2S)-2-amino-3-mercaptopropanoic acid",
+    "(2S)-2-azaniumyl-3-sulfanylpropanoate",
+    "(2S)-2-amino-3-sulfanylpropanoic acid"
+   ]
+  },
+  "dD": {
+   "cid": 83887,
+   "inchikey": "CKLJMWTZIZZHCS-UWTATZPHSA-N",
+   "names": [
+    "(2R)-2-azaniumyl-4-hydroxy-4-oxobutanoate",
+    "<span class='DL'>D</span>-Aminosuccinic acid",
+    "3-hydroxy-N-(2-methyl-1-oxo-2-propenyl)-"
+   ]
+  },
+  "dE": {
+   "cid": 23327,
+   "inchikey": "WHUUTDBJXJRKMK-GSVOUGTGSA-N",
+   "names": [
+    "(2R)-2-azaniumyl-5-hydroxy-5-oxopentanoate",
+    "(R)-1-Aminopropane-1,3-dicarboxylic acid",
+    "delta-2-Aminoglutarate"
+   ]
+  },
+  "dF": {
+   "cid": 71567,
+   "inchikey": "COLNVLDHVKWLRT-MRVPVSSYSA-N",
+   "names": [
+    "D-alpha-Amino-beta-phenylpropionate",
+    "(2R)-2-ammonio-3-phenylpropanoate",
+    "(2R)-2-amino-3-phenyl-propanoic acid"
+   ]
+  },
+  "dH": {
+   "cid": 71083,
+   "inchikey": "HNDVDQJCIGZPNO-RXMQYKEDSA-N",
+   "names": [
+    "(R)-alpha-Amino-1H-imidazole-4-propionic acid",
+    "(2r)2amino3(1himidazol4yl)propanoicacid",
+    "(2r)2azaniumyl3(1himidazol5yl)propanoate"
+   ]
+  },
+  "dI": {
+   "cid": 76551,
+   "inchikey": "AGPKZVBTJJNPAG-RFZPGFLSSA-N",
+   "names": [
+    "(2r,3r)-2-amino-3-methyl-pentanoic acid",
+    "(2R, 3R)2Amino3methylpentanoic acid",
+    "(2R,3R)-2-Amino-3-methylvaleric acid"
+   ]
+  },
+  "dK": {
+   "cid": 57449,
+   "inchikey": "KDXKERNSBIXSRK-RXMQYKEDSA-N",
+   "names": [
+    "(R,S)-2,6-Diamino-hexanoic acid",
+    "(2R)-2,6-diaminohexanoic acid",
+    "(R)-2,6-Diaminohexanoate"
+   ]
+  },
+  "dL": {
+   "cid": 439524,
+   "inchikey": "ROHFNLRQFUQHCH-RXMQYKEDSA-N",
+   "names": [
+    "(2R)-2-Amino-4-methyl-pentanoic acid",
+    "(2R)-2-azaniumyl-4-methylpentanoate",
+    "D-Homo-valine"
+   ]
+  },
+  "dM": {
+   "cid": 84815,
+   "inchikey": "FFEARJCKVFRZRR-SCSAIBSYSA-N",
+   "names": [
+    "(2R)-2-amino-4-(methylsulfanyl)butanoic acid",
+    "(R)-2-Amino-4-(methylmercapto)butyric acid",
+    "(2R)-2-amino-4-methylsulfanylbutanoic acid"
+   ]
+  },
+  "dN": {
+   "cid": 439600,
+   "inchikey": "DCXYFEDJOCDNAF-UWTATZPHSA-N",
+   "names": [
+    "(2R)-4-amino-2-ammonio-4-oxobutanoate",
+    "D-aspartic acid beta-amide",
+    "(2R)-2,4-diamino-4-oxobutanoic acid"
+   ]
+  },
+  "dP": {
+   "cid": 8988,
+   "inchikey": "ONIBWKKTOPOVIA-SCSAIBSYSA-N",
+   "names": [
+    "(2R)-pyrrolidin-1-ium-2-carboxylate",
+    "(2R)-pyrrolidine-2-carboxylic acid",
+    "(r)-2-carboxypyrrolidine"
+   ]
+  },
+  "dQ": {
+   "cid": 145815,
+   "inchikey": "ZDXPYRJPNDTMRX-GSVOUGTGSA-N",
+   "names": [
+    "(r)-2-amino-4-carbamoyl-butyric acid",
+    "(2R)-2,5-diamino-5-oxopentanoic acid",
+    "D-Glutamic acid 5-amide"
+   ]
+  },
+  "dR": {
+   "cid": 71070,
+   "inchikey": "ODKSFYDXXFIFQN-SCSAIBSYSA-N",
+   "names": [
+    "(2R)-2-amino-5-guanidino-pentanoic acid",
+    "(-)-D-Arginine hydrate",
+    "(2R)-2-amino-5-carbamimidamidopentanoic acid"
+   ]
+  },
+  "dS": {
+   "cid": 71077,
+   "inchikey": "MTCFGRXMJLQNBG-UWTATZPHSA-N",
+   "names": [
+    "(2R)-2-amino-3-hydroxy-propanoic acid",
+    "(2R)-2-azaniumyl-3-hydroxypropanoate",
+    "(2R)-2-amino-3-hydroxypropanoic acid"
+   ]
+  },
+  "dT": {
+   "cid": 69435,
+   "inchikey": "AYFVYJQAPQTCCC-STHAYSLISA-N",
+   "names": [
+    "(2R,3S)-2-amino-3-hydroxy-butanoic acid",
+    "(2R,3S)-2-Amino-3-hydroxybutyric acid",
+    "(2R,3S)-2-amino-3-hydroxybutanoic acid"
+   ]
+  },
+  "dV": {
+   "cid": 71563,
+   "inchikey": "KZSNJWFQEVHDMF-SCSAIBSYSA-N",
+   "names": [
+    "(2R)-2-amino-3-methyl-butanoic acid",
+    "(2R)-2-ammonio-3-methylbutanoate",
+    "(R)-alpha-Aminoisovaleric acid"
+   ]
+  },
+  "dW": {
+   "cid": 9060,
+   "inchikey": "QIVBCDIJIAJPQS-SECBINFHSA-N",
+   "names": [
+    "delta-alpha-Amino-3-indolepropionic acid",
+    "(2R)-2-azaniumyl-3-(1H-indol-3-yl)propanoate",
+    "(r)-alpha-aminoindole-3-propanoic acid"
+   ]
+  },
+  "dY": {
+   "cid": 71098,
+   "inchikey": "OUYCCCASQSFEME-MRVPVSSYSA-N",
+   "names": [
+    "(R)-2-Amino-3-(p-hydroxyphenyl)propionic acid",
+    "(R)-2-amino-3-(4-hydroxyphenyl)propanoic acid",
+    "(R)-3-(p-Hydroxyphenyl)alanine"
+   ]
+  },
+  "deamino_Chg": {
+   "cid": 21363,
+   "inchikey": "LJOODBDWMQKMFB-UHFFFAOYSA-N",
+   "names": [
+    "2-cyclohexylacetate",
+    "2cyclohexylaceticacid",
+    "Cyclohexane acetic acid"
+   ]
+  },
+  "deamino_Cys": {
+   "cid": 6514,
+   "inchikey": "DKIDEFUBRARXTE-UHFFFAOYSA-N",
+   "names": [
+    ".beta.-Mercaptopropanoic acid",
+    "Hydracrylic acid, 3-thio-",
+    "Propionic acid, 3-mercpato-"
+   ]
+  },
+  "deamino_Dab": {
+   "cid": 119,
+   "inchikey": "BTCSSZJGUNDROE-UHFFFAOYSA-N",
+   "names": [
+    "Sodium alendronate trihydrate impurity a",
+    "Acid, Hydrochloride gamma-Aminobutyric",
+    "Carisoprodol, gaba"
+   ]
+  },
+  "deamino_Dip": {
+   "cid": 64798,
+   "inchikey": "BZQGAPWJKAYCHR-UHFFFAOYSA-N",
+   "names": [
+    "(R)-Tiagabine 4-Carboxy-O-ethyl Hydrochloride",
+    ".beta.,.beta.-Diphenylpropionic acid",
+    ".beta.-Phenylbenzenepropanoic acid"
+   ]
+  },
+  "deamino_Gly_CN": {
+   "cid": 9740,
+   "inchikey": "MLIREBYILWEBDM-UHFFFAOYSA-N",
+   "names": [
+    "Malonic acid mononitrile",
+    "2cyanoaceticacid",
+    "Alphacyanoaceticacid"
+   ]
+  },
+  "deamino_Gly_OH": {
+   "cid": 757,
+   "inchikey": "AEMRFAOFKBGASW-UHFFFAOYSA-N",
+   "names": [
+    "GLYCOLIC Acid 35 Skin Chemical Peel",
+    "2-hydroxyl ethanoic acid",
+    "Alphabetahydroxyacids(glycolicacid)"
+   ]
+  },
+  "deamino_Gly_cPent": {
+   "cid": 71606,
+   "inchikey": "YVHAIVPPUIZFBA-UHFFFAOYSA-N",
+   "names": [
+    "2-cyclopentaneacetic acid",
+    "cyclopentanacetic acid"
+   ]
+  },
+  "deamino_Gly_tBu": {
+   "cid": 14057,
+   "inchikey": "MLMQPDHYNJCQAO-UHFFFAOYSA-N",
+   "names": [
+    "Butyric acid, .beta.,.beta.-dimethyl-",
+    "Des-amino t-butyl glycine",
+    "Tert-butylacetic acid"
+   ]
+  },
+  "deamino_Gly_thien2yl": {
+   "cid": 15970,
+   "inchikey": "SMJRBWINMFUUDS-UHFFFAOYSA-N",
+   "names": [
+    "2(2thienyl)aceticacid",
+    "2(carboxymethyl)thiophene",
+    "2(thien2yl)ethanoicacid"
+   ]
+  },
+  "deamino_Leu": {
+   "cid": 12587,
+   "inchikey": "FGKJLKRYENPLQH-UHFFFAOYSA-N",
+   "names": [
+    "3-Methylbutane-1-carboxylic acid",
+    "4-Methylvaleric Acid (Isocaproic Acid)",
+    "4,4-Dimethylbutanoate"
+   ]
+  },
+  "deamino_Lys": {
+   "cid": 564,
+   "inchikey": "SLXKOJJOQWFEFD-UHFFFAOYSA-N",
+   "names": [
+    "3-Propyl-2'-(N-methyl-N-ethynylamino)pyridine",
+    "Aminocaproic Acid In Plastic Container",
+    "Zinc acexamate impurity b"
+   ]
+  },
+  "deamino_Ncy": {
+   "cid": 1133,
+   "inchikey": "CWERGRDVMFNCDR-UHFFFAOYSA-N",
+   "names": [
+    ".alpha.-Mercaptoacetic acid",
+    "Glycolic acid, 2-thio-",
+    "Thioglycolic acid, for synthesis, 97%"
+   ]
+  },
+  "deamino_Phe": {
+   "cid": 107,
+   "inchikey": "XMIIGOLPHOKFCH-UHFFFAOYSA-N",
+   "names": [
+    "3-PHENYLPROPIONIC ACID3-Phenyl-propionic acid",
+    "Enalapril Maleate Impurity 1",
+    ".beta.-Phenylpropanoic acid"
+   ]
+  },
+  "deamino_Phg_35diMe": {
+   "cid": 4749495,
+   "inchikey": "HDNBKTWQBJJYPD-UHFFFAOYSA-N",
+   "names": [
+    "(35dimethylphenyl)aceticacid",
+    "3,5-dimethylphenylacetic acid, AldrichCPR",
+    "(3,5-xylyl)acetic acid"
+   ]
+  },
+  "deamino_Phg_4Cl": {
+   "cid": 15880,
+   "inchikey": "CDPKJZJVTHSESZ-UHFFFAOYSA-N",
+   "names": [
+    "(4chlorophenyl)aceticacid",
+    "(pchlorophenyl)aceticaci",
+    "2(4chlorophenyl)ethanoicacid"
+   ]
+  },
+  "deamino_hPhe": {
+   "cid": 4775,
+   "inchikey": "OBKXEAXTFZPCHS-UHFFFAOYSA-N",
+   "names": [
+    "2-methyl-1-phenyl-propan-2-amine",
+    ".gamma.-Phenyl-n-butyric acid",
+    "omega-Phenylbutanoate"
+   ]
+  },
+  "deamino_nTyr_Me": {
+   "cid": 7690,
+   "inchikey": "NRPFNQUDKRYCNX-UHFFFAOYSA-N",
+   "names": [
+    "(4(methyloxy)phenyl)aceticacid",
+    "(4methoxyphenyl)acetate",
+    "Homo-p-anisic acid"
+   ]
+  },
+  "fmoc": {
+   "cid": 14833743,
+   "inchikey": "FGIVSGPRGVABAB-UHFFFAOYSA-N",
+   "names": [
+    "(9H-fluoren-9-yl)methyl hydrogen carbonate",
+    "9H-fluoren-9-ylmethyl hydrogen carbonate",
+    "fmoc-alcohol"
+   ]
+  },
+  "gGlu": {
+   "cid": 33032,
+   "inchikey": "WHUUTDBJXJRKMK-VKHMYHEASA-N",
+   "names": [
+    "(2S)-2-amino-5-hydroxy-5-oxopentanoate;hydron",
+    "Lysine acetate impurity b",
+    "(S)-1-Aminopropane-1,3-dicarboxylic acid"
+   ]
+  },
+  "hArg": {
+   "cid": 9085,
+   "inchikey": "QUOGESRFPZDMMT-YFKPBYRVSA-N",
+   "names": [
+    "L-Lysine, N(6)-(aminoiminomethyl)-",
+    "homo-l-arginine",
+    "(2S)-2-amino-6-carbamimidamidohexanoic acid"
+   ]
+  },
+  "hHis": {
+   "cid": 12310464,
+   "inchikey": "MSECZMWQBBVGEN-LURJTMIESA-N",
+   "names": [
+    "3-(1H-Imidazol-5-ylmethyl)-L-alanine",
+    "L-Homohistidine"
+   ]
+  },
+  "hPhe": {
+   "cid": 2724505,
+   "inchikey": "JTTHKOPSMAVJFE-VIFPVBQESA-N",
+   "names": [
+    "(S)alpha-amino4-phenyl-butyric acid",
+    "L-.gamma.-phenylbutyrine",
+    "(+)-2-amino-4-phenylbutyric acid"
+   ]
+  },
+  "meA": {
+   "cid": 5288725,
+   "inchikey": "GDFAOVXKHJXLEI-VKHMYHEASA-N",
+   "names": [
+    ".alpha.-(Methylamino)propionic acid",
+    "(2S)-2-(methylazaniumyl)propanoate",
+    "(2S)-2-(methylamino)propanoic acid"
+   ]
+  },
+  "meC": {
+   "cid": 452303,
+   "inchikey": "DVOOXRTYGGLORL-VKHMYHEASA-N",
+   "names": [
+    "(R)-3-Mercapto-2-(methylamino)propanoic acid",
+    "(2R)-2-(methylamino)-3-sulfanylpropanoic acid",
+    "(R)-N-Methylcysteine"
+   ]
+  },
+  "meD": {
+   "cid": 92982,
+   "inchikey": "HOKKHZGPKSLGJE-VKHMYHEASA-N",
+   "names": [
+    "(2S)-2-(methylamino)butanedioate",
+    "(2S)-2-(methylamino)butanedioic acid",
+    "(S)-2-(Methylamino)succinic acid"
+   ]
+  },
+  "meE": {
+   "cid": 439377,
+   "inchikey": "XLBVNMSMFQMKEY-BYPYZUCNSA-N",
+   "names": [
+    "(2S)-2-(methylamino)pentanedioate",
+    "(2S)-2-(methylamino)pentanedioic acid",
+    "(S)-2-(methylamino)pentanedioicacid"
+   ]
+  },
+  "meF": {
+   "cid": 6951134,
+   "inchikey": "SCIFESDRCALIIM-VIFPVBQESA-N",
+   "names": [
+    "(2S)-2-(methylammonio)-3-phenylpropanoate",
+    "(2S)-2-(methylazaniumyl)-3-phenylpropanoate",
+    "N-methyl-L-phenylalanine zwitterion"
+   ]
+  },
+  "meG": {
+   "cid": 1088,
+   "inchikey": "FSYKKLYZXJSNPZ-UHFFFAOYSA-N",
+   "names": [
+    "(Methylamino)acetic acid",
+    "(methylammonio)acetate",
+    "Coco-betaine"
+   ]
+  },
+  "meH": {
+   "cid": 90638,
+   "inchikey": "CYZKJBZEIFWZSR-LURJTMIESA-N",
+   "names": [
+    "Nalpha-Methylhistidine"
+   ]
+  },
+  "meI": {
+   "cid": 5288628,
+   "inchikey": "KSPIYJQBLVDRRI-WDSKDSINSA-N",
+   "names": [
+    "(2S)-3-methyl-2-(methylamino)pentanoic acid",
+    "(2S,3S)-3-methyl-2-(methylamino)pentanoicacid",
+    "(2S,3S)-3-methyl-2-methylaminopentanoic acid"
+   ]
+  },
+  "meK": {
+   "cid": 7010497,
+   "inchikey": "OLYPWXRMOFUVGH-LURJTMIESA-N",
+   "names": [
+    "(2S)-6-amino-2-(methylamino)hexanoic acid",
+    "N-alpha-Methyl-L-lysinehydrochloride",
+    "(S)-6-Amino-2-(methylamino)hexanoicacid"
+   ]
+  },
+  "meL": {
+   "cid": 2777993,
+   "inchikey": "XJODGRWDFZVTKW-LURJTMIESA-N",
+   "names": [
+    "(2R)-4-methyl-2-(methylamino)pentanoic acid",
+    "(2S)-4-methyl-2-(methylazaniumyl)pentanoate",
+    "(S)-4-Methyl-2-(methylamino)pentanoicacid"
+   ]
+  },
+  "meM": {
+   "cid": 6451891,
+   "inchikey": "YAXAFCHJCYILRU-YFKPBYRVSA-N",
+   "names": [
+    "N-methylmethionine"
+   ]
+  },
+  "meQ": {
+   "cid": 160669,
+   "inchikey": "KSZFSNZOGAXEGH-BYPYZUCNSA-N",
+   "names": [
+    "(2S)-4-carbamoyl-2-(methylamino)butanoic acid",
+    "gamma-Glutamylmethylamide",
+    "methylglutamine"
+   ]
+  },
+  "meR": {
+   "cid": 73046,
+   "inchikey": "NTWVQPHTOUKMDI-YFKPBYRVSA-N",
+   "names": [
+    "(S)-5-Guanidino-2-methylamino-pentanoic acid",
+    "N~5~-(diaminomethylene)-n~2~-methylornithine",
+    "(S)-5-guanidino-2-(methylamino)pentanoicacid"
+   ]
+  },
+  "meV": {
+   "cid": 444080,
+   "inchikey": "AKCRVYNORCOYQT-YFKPBYRVSA-N",
+   "names": [
+    "(2S)-3-Methyl-2-methylamino-butanoic acid",
+    "(S)-3-Methyl-2-(methylamino)butyric acid",
+    "Methylvaline"
+   ]
+  },
+  "meW": {
+   "cid": 160511,
+   "inchikey": "CZCIKBSVHDNIDH-NSHDSACASA-N",
+   "names": [
+    "Nalpha-Methyl-L-tryptophan, purum, >=98.0%",
+    "Abrine",
+    "N-Methyl-L-tryptophane"
+   ]
+  },
+  "meY": {
+   "cid": 68309,
+   "inchikey": "AXDLCFOOGCNDST-VIFPVBQESA-N",
+   "names": [
+    "N-Methyl-L-tyrosine - Combretum collinum",
+    "(+)-N-Methyltyrosine",
+    "Angeline"
+   ]
+  },
+  "nTyr": {
+   "cid": 36143,
+   "inchikey": "LJCWONGJFPCTTL-ZETCQYMHSA-N",
+   "names": [
+    "(2S)-2-azaniumyl-2-(4-hydroxyphenyl)acetate",
+    "(S)-alpha-Amino-4-hydroxybenzeneacetic acid",
+    "Oxfenicine [USAN:INN:BAN]"
+   ]
+  },
+  "pnA": {
+   "cid": 4472514,
+   "inchikey": "DUMWERDMQQCWPO-UHFFFAOYSA-N",
+   "names": [
+    "N-(acetyl-adeninyl)-N-(2-aminoethyl)-glycine",
+    "PNA (Peptide Nucleic Acid)-adenine monomer"
+   ]
+  },
+  "pnC": {
+   "cid": 4627782,
+   "inchikey": "MFPUAOSBORLXTD-UHFFFAOYSA-N",
+   "names": [
+    "N-(acetylcytosinyl)-N-(2-aminoethyl)glycine",
+    "PNA (Peptide Nucleic Acid)-cytosine monomer"
+   ]
+  },
+  "pnT": {
+   "cid": 3382777,
+   "inchikey": "NSCRQJLBPSKCNK-UHFFFAOYSA-N",
+   "names": [
+    "N-(Acetylthyminyl)-N-(2-aminoethyl)glycine",
+    "PNA (Peptide Nucleic Acid)-thymine monomer"
+   ]
+  },
+  "seC": {
+   "cid": 25076,
+   "inchikey": "ZKZBPNGNEQAJSX-REOHCLBHSA-N",
+   "names": [
+    "(2R)-2-Amino-3-(hydroseleno)propionic acid",
+    "(2R)-2-amino-3-selanyl-propanoic acid",
+    "Alanine, 3-selenyl-"
+   ]
+  },
+  "xiHyp": {
+   "cid": 69248,
+   "inchikey": "PMMYEEVYMWASQN-BKLSDQPFSA-N",
+   "names": [
+    "4hydroxy-l-proline",
+    "allo-L-Hydroxyproline",
+    "(2S)-4-hydroxy-2-pyrrolidinecarboxylic acid"
+   ]
+  },
+  "xiIle": {
+   "cid": 5351546,
+   "inchikey": "AGPKZVBTJJNPAG-AKGZTFGVSA-N",
+   "names": [
+    ".l-isoleucine"
+   ]
+  },
+  "xiThr": {
+   "cid": 11768555,
+   "inchikey": "AYFVYJQAPQTCCC-NFJMKROFSA-N",
+   "names": [
+    "(S)-2-Amino-3-hydroxy-butyric acid",
+    "[3h]-l-threonine"
+   ]
+  }
+ }
+}
