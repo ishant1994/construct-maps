@@ -7,10 +7,6 @@ description: Use for protein or peptide engineering, interpreting sequence–fun
 
 Connect biological objectives to specific sequence designs and informative experiments. Use annotation to generate and discriminate hypotheses.
 
-## Scope and limits
-
-Use this skill for basic research on proteins and peptides. Treat every design as a hypothesis for experimental testing.
-
 ## Establish the objective and reference
 
 Define the desired behavior, biological context, competing objectives, and measurements of success. Establish the parent sequence, accessions, sequence versions, boundaries, junctions, tags, delivery and expression background, and numbering. Respect requested evidence cutoffs. Preserve unresolved ambiguities while continuing independent work; label assumed reference sequences explicitly.
