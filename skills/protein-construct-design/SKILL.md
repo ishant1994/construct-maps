@@ -9,7 +9,7 @@ Connect biological objectives to specific sequence designs and informative exper
 
 ## Scope and limits
 
-Use this skill for basic research on proteins and peptides. Treat every design as a hypothesis for experimental testing. Decline requests for medical or dosing advice and requests that could cause harm, and offer the benign design work that remains.
+Use this skill for basic research on proteins and peptides. Treat every design as a hypothesis for experimental testing.
 
 ## Establish the objective and reference
 
