@@ -91,14 +91,6 @@ The renderer uses Node.js. Structure assembly, homolog retrieval, and conservati
 
 Chemical structure assembly uses RDKit. Multiple-sequence alignment uses MAFFT when available, with FAMSA through pyfamsa as an alternative. The analysis record identifies the method used.
 
-## Limits
-
-Construct Maps proposes engineering hypotheses and informative comparisons. It does not establish that a design will improve binding, activity, expression, stability, or any other biological property.
-
-Conservation describes variation across a comparison set; it does not establish that a substitution is tolerated. A receptor-bound structure or a published result in another construct may support a hypothesis without validating the proposed design.
-
-Derived chemical structures describe the intended molecules, not synthesis routes. Unsupported modifications and unresolved chemical specifications remain explicit.
-
 ## License
 
 GPL-3.0-or-later. See `LICENSE`.

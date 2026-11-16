@@ -1,7 +1,7 @@
 {
   "name": "construct-maps",
   "version": "0.1.0",
-  "description": "Plan protein and peptide designs, compare existing constructs, and explore the evidence behind each change. Propose a focused library with controls, map functional regions and residue conservation, and visualize sequences and peptide chemistry in an interactive document.",
+  "description": "Design protein and peptide constructs to investigate biological function. Build a focused library informed by literature and sequence analysis, or compare designs you already have. Explore constructs side by side in interactive maps that connect sequence changes, functional regions, conservation, and peptide chemistry to supporting evidence and experiments that test each hypothesis.",
   "author": {
     "name": "ishant1994"
   },

@@ -23,10 +23,6 @@ The scripts may make public lookups or install dependencies as part of completin
 - **Europe PMC:** receives DOI, PubMed, or PMC identifiers when citation metadata is checked.
 - **Package services:** the configured package index and download hosts receive requests for Python packages and dependencies.
 
-These database lookup requests do not include the sequence being designed. They may be initiated automatically when the workflow requires them.
-
-As with other network requests, the receiving service may observe network metadata, such as the originating IP address. Public identifiers can also reveal the subject of a research task. Each service handles requests under its own policies.
-
 ## Other research tools
 
 The hosting AI may use additional tools for literature search, browsing, file access, or other work. This page does not describe or control those tools’ requests.
@@ -37,10 +33,6 @@ Their data handling depends on the hosting application, tool provider, permissio
 
 The plugin does not maintain a separate author-operated copy of session data. Generated files and conversation content are retained according to the hosting application’s policies and your settings.
 
-## Audience
-
-Construct Maps is a research tool for people working with proteins and peptides. It is not directed at children.
-
 ## Contact
 
-Raise questions through the repository’s issue tracker. Avoid including confidential sequences, unpublished results, or other sensitive information in public issues.
+Raise questions through the repository’s issue tracker.
