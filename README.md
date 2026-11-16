@@ -91,6 +91,10 @@ The renderer uses Node.js. Structure assembly, homolog retrieval, and conservati
 
 Chemical structure assembly uses RDKit. Multiple-sequence alignment uses MAFFT when available, with FAMSA through pyfamsa as an alternative. The analysis record identifies the method used.
 
+## Intended use
+
+Construct Maps is a basic research tool for planning and comparing experiments on proteins and peptides. Every proposal is a hypothesis to test at the bench. It gives no medical or dosing advice, and it will not help with work that could cause harm.
+
 ## Limits
 
 Construct Maps proposes engineering hypotheses and informative comparisons. It does not establish that a design will improve binding, activity, expression, stability, or any other biological property.

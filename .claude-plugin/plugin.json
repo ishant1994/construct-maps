@@ -15,5 +15,8 @@
     "sequence visualization",
     "structure–function relationships"
   ],
-  "icon": "./assets/icon.png"
+  "icon": "./assets/icon.png",
+  "documentationUrl": "https://github.com/ishant1994/construct-maps",
+  "supportUrl": "https://github.com/ishant1994/construct-maps/issues",
+  "privacyPolicyUrl": "https://github.com/ishant1994/construct-maps/blob/main/PRIVACY.md"
 }
