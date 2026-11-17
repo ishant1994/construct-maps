@@ -19,7 +19,6 @@ The hosting application controls how conversations, files, and execution environ
 The scripts may make public lookups or install dependencies as part of completing a task:
 
 - **UniProt:** receives accession numbers, UniRef cluster identifiers, or Pfam identifiers when homologs are retrieved.
-- **NCBI:** receives a request for a public substitution-matrix file.
 - **Europe PMC:** receives DOI, PubMed, or PMC identifiers when citation metadata is checked.
 - **Package services:** the configured package index and download hosts receive requests for Python packages and dependencies.
 

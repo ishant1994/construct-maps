@@ -75,7 +75,6 @@ The bundled scripts may contact the following services when the corresponding wo
 | Step | Service | Information sent |
 |---|---|---|
 | Retrieve homologs | UniProt | A UniProt accession, UniRef cluster identifier, or Pfam identifier |
-| Download a substitution matrix | NCBI | A request for a public matrix file |
 | Check citation metadata | Europe PMC | DOI, PubMed, or PMC identifiers |
 | Install Python dependencies | The configured package index and download hosts | Package requests for RDKit, pyfamsa, and their dependencies |
 

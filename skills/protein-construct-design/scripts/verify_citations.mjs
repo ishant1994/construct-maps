@@ -41,6 +41,24 @@ import { readFile } from 'node:fs/promises';
 
 const EPMC = 'https://www.ebi.ac.uk/europepmc/webservices/rest/search';
 const HEADERS = { 'User-Agent': 'construct-maps-citation-check/1.0' };
+const EPMC_HOST = new URL(EPMC).hostname;
+
+/**
+ * A lookup that got no usable answer. `mayBeBlocked` is true when the cause could be an
+ * environment withholding access (no answer at all, or a 403/407), as opposed to the server
+ * answering with something that is its own problem. It is a possibility, not a diagnosis: the
+ * same symptom is a refusal, a timeout, a dead connection and a missing proxy setting.
+ */
+class LookupError extends Error {
+  constructor(message, mayBeBlocked = false) {
+    super(message);
+    this.mayBeBlocked = mayBeBlocked;
+  }
+}
+
+/** Node's fetch ignores HTTPS_PROXY unless NODE_USE_ENV_PROXY=1 is set (Node 22.21 or 24 and later). */
+const proxyIgnored = () =>
+  Boolean(process.env.HTTPS_PROXY || process.env.https_proxy) && !process.env.NODE_USE_ENV_PROXY;
 /** A lookup that has not answered by now is reported as an ERROR, not waited on. */
 const REQUEST_TIMEOUT_MS = 30_000;
 /** A pause between lookups, to stay well inside Europe PMC's request-rate guidance. */
@@ -122,14 +140,26 @@ async function lookup(kind, id) {
     throw new Error(`identifier ${JSON.stringify(id)} has characters a lookup cannot carry`);
   }
   const query = encodeURIComponent(`${kind}:"${id}"`);
-  const response = await fetch(`${EPMC}?query=${query}&resultType=lite&format=json&pageSize=2`, {
-    headers: HEADERS,
-    signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
-    // A redirect would carry the lookup to a host this script does not disclose,
-    // so it is reported as an error and not followed.
-    redirect: 'manual',
-  });
-  if (!response.ok) throw new Error(`Europe PMC returned HTTP ${response.status}`);
+  let response;
+  try {
+    response = await fetch(`${EPMC}?query=${query}&resultType=lite&format=json&pageSize=2`, {
+      headers: HEADERS,
+      signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
+      // A redirect would carry the lookup to a host this script does not disclose,
+      // so it is reported as an error and not followed.
+      redirect: 'manual',
+    });
+  } catch (e) {
+    // fetch reports every network failure as "fetch failed"; the reason is on `cause`.
+    const cause = e?.cause?.message ?? e?.cause?.code ?? e?.message ?? String(e);
+    throw new LookupError(`could not reach Europe PMC (${EPMC_HOST}): ${cause}`, true);
+  }
+  if (!response.ok) {
+    throw new LookupError(
+      `Europe PMC (${EPMC_HOST}) returned HTTP ${response.status}`,
+      response.status === 403 || response.status === 407,
+    );
+  }
   const body = await response.json();
   // A missing result structure is an error. Treating it as "no hits" would
   // report UNRESOLVED and exit zero, so a malformed response would read as a
@@ -164,6 +194,7 @@ async function check(path, quiet) {
     return;
   }
   const tally = {};
+  let blocked = 0;
   for (const source of sources) {
     const ids = identifiersOf(source);
     if (ids.length === 0) {
@@ -184,6 +215,7 @@ async function check(path, quiet) {
         resolutions.push({ label: `${kind}:${id}`, hits: await lookup(kind, id) });
       } catch (e) {
         errors.push(`${kind}:${id}: ${e.message}`);
+        if (e instanceof LookupError && e.mayBeBlocked) blocked += 1;
       }
       await sleep(REQUEST_GAP_MS);
     }
@@ -276,6 +308,19 @@ async function check(path, quiet) {
         .map(([k, v]) => `${v} ${k}`)
         .join(', '),
   );
+  if (blocked > 0) {
+    console.log(
+      `  ${blocked} lookup${blocked === 1 ? '' : 's'} could not get an answer from Europe PMC (${EPMC_HOST}), so ` +
+        'the sources marked ERROR are unchecked, not clean. ' +
+        `If this environment limits outbound access, ${EPMC_HOST} may need to be allowed. ` +
+        (proxyIgnored()
+          ? "This environment sets HTTPS_PROXY, which Node's fetch ignores unless NODE_USE_ENV_PROXY=1 is " +
+            'set (Node 22.21 or later), so the lookup may be failing for that reason and not because the host ' +
+            'is blocked. '
+          : '') +
+        "Otherwise confirm each title against the paper's own page and record how it was checked.",
+    );
+  }
 }
 
 const args = process.argv.slice(2);

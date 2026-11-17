@@ -4,7 +4,8 @@
 Everything comes from the UniProt REST API over HTTPS: no account, no key,
 no local database, no BLAST install. The only data that leaves the machine is the
 accession, a UniRef cluster id or a Pfam id; the sequence being designed is never
-sent.
+sent. UniProt is the only host this script contacts: the BLOSUM62 table ships with
+the skill (data/matrices/) and is copied into the output folder, not downloaded.
 
 TWO LEVELS, BECAUSE THEY ANSWER DIFFERENT QUESTIONS
 
@@ -41,12 +42,16 @@ rather than something re-fetched at build time.
     python3 scripts/fetch_homologs.py ACCESSION data/example
     python3 scripts/fetch_homologs.py ACCESSION data/example --level family
 
-Writes <out>/reference.fasta, <out>/homologs.fasta, <out>/BLOSUM62 and
-<out>/provenance.json.
+Writes <out>/reference.fasta, <out>/homologs.fasta, <out>/BLOSUM62 (a copy of the
+bundled table) and <out>/provenance.json.
+
+Nothing is written until every request has succeeded, so a refused or failed run
+leaves <out> exactly as it found it.
 """
 from __future__ import annotations
 
 import argparse
+import hashlib
 import http.client
 import json
 import re
@@ -59,11 +64,16 @@ from datetime import date
 from pathlib import Path
 
 UNIPROT = "https://rest.uniprot.org"
-BLOSUM62_URL = "https://ftp.ncbi.nlm.nih.gov/blast/matrices/BLOSUM62"
+# The substitution table ships with the skill, so no request is made for it. It is pinned by
+# hash: a different table would change every score the built-in aligner produces. The
+# origin is kept for the provenance record, and data/matrices/NOTICE.md says where it came from.
+MATRIX_FILE = Path(__file__).resolve().parent.parent / "data" / "matrices" / "BLOSUM62"
+MATRIX_SHA256 = "85510d3846ee6d5f4778e425cf8daf6e0dbb889b306f2d13434e1254780efb40"
+MATRIX_ORIGIN = "https://ftp.ncbi.nlm.nih.gov/blast/matrices/BLOSUM62"
 TIMEOUT = 120
-# The only two hosts this script talks to. Every URL is checked against them,
+# The only host this script talks to. Every URL is checked against it,
 # including the "next page" link a UniProt response hands back.
-ALLOWED_HOSTS = frozenset({"rest.uniprot.org", "ftp.ncbi.nlm.nih.gov"})
+ALLOWED_HOSTS = frozenset({"rest.uniprot.org"})
 # One response is never larger than this. A page of 500 FASTA entries and the
 # largest entry record are both far below it.
 MAX_RESPONSE_BYTES = 64 * 1024 * 1024
@@ -94,13 +104,54 @@ class CheckedRedirects(urllib.request.HTTPRedirectHandler):
 OPENER = urllib.request.build_opener(CheckedRedirects)
 
 
-def get(url: str) -> tuple[bytes, dict[str, str]]:
+class FetchError(Exception):
+    """A request that did not complete. It carries the host and what was being fetched, so the
+    message says which lookup failed and why; a bare network error says neither."""
+
+    def __init__(self, url: str, what: str, cause: str, status: int | None = None):
+        self.host = urllib.parse.urlsplit(url).hostname or url
+        self.status = status
+        super().__init__(f"{self.host} ({what}): {cause}" if what else f"{self.host}: {cause}")
+
+    @property
+    def may_be_blocked(self) -> bool:
+        """True when the failure could be an environment withholding access: no answer at all, or
+        a refusal. A 404 or a 500 is the server answering, so it says nothing about access."""
+        return self.status in (None, 403, 407)
+
+
+class MatrixError(Exception):
+    """The substitution table that ships with the skill is missing or is not the pinned file."""
+
+
+def get(url: str, what: str = "") -> tuple[bytes, dict[str, str]]:
     request = urllib.request.Request(check_url(url), headers={"User-Agent": "construct-maps/0.1"})
-    with OPENER.open(request, timeout=TIMEOUT) as response:
-        body = response.read(MAX_RESPONSE_BYTES + 1)
-        if len(body) > MAX_RESPONSE_BYTES:
-            raise ValueError(f"response from {url!r} exceeds {MAX_RESPONSE_BYTES} bytes")
-        return body, {k.lower(): v for k, v in response.headers.items()}
+    try:
+        with OPENER.open(request, timeout=TIMEOUT) as response:
+            body = response.read(MAX_RESPONSE_BYTES + 1)
+            if len(body) > MAX_RESPONSE_BYTES:
+                raise ValueError(f"response from {url!r} exceeds {MAX_RESPONSE_BYTES} bytes")
+            return body, {k.lower(): v for k, v in response.headers.items()}
+    except urllib.error.HTTPError as error:
+        raise FetchError(url, what, f"HTTP {error.code} {error.reason}", error.code) from error
+    except (urllib.error.URLError, OSError, http.client.HTTPException) as error:
+        # OSError covers a timeout, a reset, or a proxy refusing the tunnel; HTTPException covers
+        # a server that closes the connection before it answers, which urllib does not wrap.
+        raise FetchError(url, what, str(getattr(error, "reason", error))) from error
+
+
+def bundled_matrix() -> bytes:
+    """The BLOSUM62 table that ships with the skill, refused unless it is the pinned file."""
+    try:
+        data = MATRIX_FILE.read_bytes()
+    except OSError as error:
+        raise MatrixError(f"the BLOSUM62 table that ships with this skill could not be read "
+                          f"({MATRIX_FILE}): {error}") from error
+    found = hashlib.sha256(data).hexdigest()
+    if found != MATRIX_SHA256:
+        raise MatrixError(f"the BLOSUM62 table at {MATRIX_FILE} is not the file this skill was built "
+                          f"with (SHA-256 {found}, expected {MATRIX_SHA256}); restore it from the plugin")
+    return data
 
 
 def accession_argument(value: str) -> str:
@@ -125,6 +176,29 @@ def explain(*paragraphs: str) -> None:
               file=sys.stderr)
 
 
+def write_outputs(out: Path, files: dict[str, bytes]) -> None:
+    """Write a finished set of files into `out`.
+
+    Called only once every request has succeeded, so a refused or failed run leaves the
+    directory as it found it. provenance.json is the record that says what the other
+    files are, so it is removed first and written last: an interruption part-way leaves
+    sequences with no record, which the scorer refuses, and never new sequences beside
+    the previous run's record. Each file is written whole under a temporary name and then
+    renamed into place."""
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "provenance.json").unlink(missing_ok=True)
+
+    def put(name: str, data: bytes) -> None:
+        temporary = out / f".{name}.tmp"
+        temporary.write_bytes(data)
+        temporary.replace(out / name)
+
+    for name, data in files.items():
+        if name != "provenance.json":
+            put(name, data)
+    put("provenance.json", files["provenance.json"])
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__,
                                       formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -145,10 +219,11 @@ def main() -> int:
                         help="refuse an ortholog set smaller than this rather than score a "
                              "protein against a handful of relatives (default 30)")
     args = parser.parse_args()
-    args.out.mkdir(parents=True, exist_ok=True)
+    outputs: dict[str, bytes] = {}
+    matrix = bundled_matrix()
 
     entry_url = f"{UNIPROT}/uniprotkb/{args.accession}.json"
-    entry = json.loads(get(entry_url)[0])
+    entry = json.loads(get(entry_url, f"the entry for {args.accession}")[0])
     sequence = entry["sequence"]["value"]
     name = entry.get("proteinDescription", {}).get("recommendedName", {}) \
         .get("fullName", {}).get("value") or args.accession
@@ -156,14 +231,15 @@ def main() -> int:
     print(f"{args.accession}: {name} [{organism}], {len(sequence)} aa")
     print(f"  entry type: {entry.get('entryType')}")
 
-    (args.out / "reference.fasta").write_bytes(get(f"{UNIPROT}/uniprotkb/{args.accession}.fasta")[0])
+    outputs["reference.fasta"] = get(f"{UNIPROT}/uniprotkb/{args.accession}.fasta",
+                                     "the reference sequence")[0]
 
     level = "family" if args.family else args.level
 
     def total_for(query: str) -> int:
         url = f"{UNIPROT}/uniprotkb/search?query={urllib.parse.quote(query)}" \
               "&format=tsv&fields=accession&size=1"
-        return int(get(url)[1].get("x-total-results", "0"))
+        return int(get(url, "the size of the comparison set")[1].get("x-total-results", "0"))
 
     def paged_fasta(query: str, wanted: int) -> str:
         """Page through a UniProt result set. A page caps at 500 and the cursor
@@ -176,7 +252,7 @@ def main() -> int:
         pages: list[str] = []
         seen = 0
         while url and seen < wanted:
-            body, headers = get(url)
+            body, headers = get(url, "the comparison sequences")
             text = body.decode()
             pages.append(text)
             seen += text.count(">")
@@ -204,7 +280,8 @@ def main() -> int:
         # asked about, so a cluster id cannot be derived from the accession.
         url = f"{UNIPROT}/uniref/search?query={urllib.parse.quote(f'uniprot_id:{args.accession}')}" \
               "&format=tsv&fields=id,count&size=25"
-        rows = [r.split("\t") for r in get(url)[0].decode().splitlines()[1:] if r.strip()]
+        rows = [r.split("\t") for r in get(url, "the UniRef50 cluster")[0].decode().splitlines()[1:]
+                if r.strip()]
         fifty = [r for r in rows if r[0].startswith("UniRef50_")]
         if not fifty:
             explain(f"No UniRef50 cluster was found for {args.accession}.",
@@ -273,10 +350,10 @@ def main() -> int:
             f"with a position that is constrained in this protein."
         )
 
-    (args.out / "homologs.fasta").write_bytes(homologs.encode())
+    outputs["homologs.fasta"] = homologs.encode()
     count = homologs.count(">")
 
-    (args.out / "BLOSUM62").write_bytes(get(BLOSUM62_URL)[0])
+    outputs["BLOSUM62"] = matrix
 
     provenance = {
         "accession": args.accession,
@@ -298,10 +375,17 @@ def main() -> int:
             else f"first {count} of {total} returned by UniProt's default ordering; "
             "NOT a random or taxonomically balanced sample"
         ),
-        "matrix": BLOSUM62_URL,
+        "matrix": MATRIX_ORIGIN,
+        "matrix_delivery": "bundled with the skill, unchanged (data/matrices/NOTICE.md)",
+        "matrix_sha256": MATRIX_SHA256,
         "retrieved_on": date.today().isoformat(),
     }
-    (args.out / "provenance.json").write_text(json.dumps(provenance, indent=2) + "\n")
+    outputs["provenance.json"] = (json.dumps(provenance, indent=2) + "\n").encode()
+    try:
+        write_outputs(args.out, outputs)
+    except OSError as error:
+        explain(f"Could not write the results into {args.out}: {error}")
+        return 1
 
     print(f"  wrote {args.out}/reference.fasta ({len(sequence)} aa)")
     print(f"  wrote {args.out}/homologs.fasta ({count} sequences, {level} level)")
@@ -315,11 +399,17 @@ def main() -> int:
 def run() -> int:
     try:
         return main()
-    except urllib.error.HTTPError as error:
-        print(f"UniProt answered {error.code} {error.reason} for {error.url}", file=sys.stderr)
+    except MatrixError as error:
+        print(f"error: {error}", file=sys.stderr)
+        return 2
+    except FetchError as error:
+        print(f"request failed: {error}", file=sys.stderr)
+        if error.may_be_blocked:
+            # Said as a possibility: the same symptom is a refusal, a timeout and a dead
+            # connection, and nothing here can tell which.
+            explain(f"If this environment limits outbound access, {error.host} may need to be "
+                    "allowed. Without it the comparison set cannot be fetched.")
     except (urllib.error.URLError, OSError, http.client.HTTPException, ValueError) as error:
-        # OSError covers a timeout or a reset; HTTPException covers a server that
-        # closes the connection before it answers, which urllib does not wrap.
         print(f"request failed: {getattr(error, 'reason', error)}", file=sys.stderr)
     return 1
 
