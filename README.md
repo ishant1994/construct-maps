@@ -84,6 +84,12 @@ Literature research may also use search, browsing, or other tools supplied by th
 
 See `PRIVACY.md` for details.
 
+## Network access in Claude
+
+By default, Claude's code environment can reach only a short list of websites. That blocks the UniProt lookups behind conservation scores and the Europe PMC citation checks. To allow them, open your profile menu (bottom left), go to Settings, then Capabilities, and set Allowed websites to any website. On Team and Enterprise plans, an organization owner controls this setting.
+
+Without it, designs, sequence checks, chemistry, and figures still work. Conservation and citation checks are reported as not completed.
+
 ## Requirements
 
 The renderer uses Node.js. Structure assembly, homolog retrieval, and conservation scoring use Python.
