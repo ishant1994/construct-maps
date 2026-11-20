@@ -70,6 +70,20 @@ const PARTIAL_AT = 0.6;
 const MIN_WORD_LENGTH = 3;
 /** Characters that would change a Europe PMC query once quoted into it. */
 const UNQUOTABLE = /["\\\s\u0000-\u001f]/;
+/**
+ * A PMC identifier: PMC and digits. Europe PMC finds one only when it is NOT quoted, and
+ * `PMCID:"PMC123"` returns nothing at all, so a correct id read as unresolved. With no quotes to
+ * contain it, the id cannot be allowed to carry anything but this shape.
+ */
+const PMC_ID = /^PMC\d{1,12}$/i;
+/**
+ * A PubMed id: digits. Europe PMC finds some PubMed-indexed records, bioRxiv preprints that carry a
+ * PMID among them, only when the source is named and the id is not quoted: EXT_ID:"40766354" and
+ * EXT_ID:40766354 both return nothing, while EXT_ID:40766354 AND SRC:MED finds the paper. Quoting the
+ * id and naming the source together returns nothing for almost every id, so the two go together as
+ * written. Digits only is what keeps an unquoted id from rewriting the query.
+ */
+const PMID = /^\d{1,9}$/;
 
 /** Database and repository sources, which have no bibliographic record to check. */
 const NON_LITERATURE =
@@ -129,17 +143,35 @@ function identifiersOf(source) {
   if ((m = url.match(/doi\.org\/(10\.[^\s"'?#]+)/i))) out.push(['DOI', m[1]]);
   if ((m = url.match(/biorxiv\.org\/content\/(10\.[^\s"'?#v]+)/i))) out.push(['DOI', m[1]]);
   if ((m = url.match(/pubmed\.ncbi\.nlm\.nih\.gov\/(\d+)/i))) out.push(['EXT_ID', m[1]]);
-  if ((m = url.match(/(PMC\d{4,})/i))) out.push(['PMCID', m[1].toUpperCase()]);
+  // Bounded on both sides, so a longer word that merely contains PMC and digits is not read as an id.
+  if ((m = url.match(/(?<![A-Za-z0-9])(PMC\d{4,})(?![A-Za-z0-9])/i))) out.push(['PMCID', m[1].toUpperCase()]);
   return out;
 }
 
 async function lookup(kind, id) {
-  // An identifier is quoted into the query, so one carrying a quote, a
-  // backslash, whitespace or a control character would rewrite it.
-  if (UNQUOTABLE.test(id)) {
-    throw new Error(`identifier ${JSON.stringify(id)} has characters a lookup cannot carry`);
+  let term;
+  if (kind === 'PMCID') {
+    // Sent unquoted (see PMC_ID), so the shape is the only thing keeping the query from being rewritten.
+    if (!PMC_ID.test(id)) {
+      throw new Error(`identifier ${JSON.stringify(id)} is not a PMC id (PMC followed by digits)`);
+    }
+    // Upper-cased so one id is always asked for one way, as ids taken from a URL already are.
+    term = `${kind}:${id.toUpperCase()}`;
+  } else if (kind === 'EXT_ID') {
+    // A PubMed id (see PMID): the source is named and the id is not quoted.
+    if (!PMID.test(id)) {
+      throw new Error(`identifier ${JSON.stringify(id)} is not a PubMed id (digits only)`);
+    }
+    term = `${kind}:${id} AND SRC:MED`;
+  } else {
+    // Any other identifier is quoted into the query, so one carrying a quote, a
+    // backslash, whitespace or a control character would rewrite it.
+    if (UNQUOTABLE.test(id)) {
+      throw new Error(`identifier ${JSON.stringify(id)} has characters a lookup cannot carry`);
+    }
+    term = `${kind}:"${id}"`;
   }
-  const query = encodeURIComponent(`${kind}:"${id}"`);
+  const query = encodeURIComponent(term);
   let response;
   try {
     response = await fetch(`${EPMC}?query=${query}&resultType=lite&format=json&pageSize=2`, {
