@@ -48,9 +48,22 @@ Scores run from 0 to 1, with 1 most constrained within that comparison set. Near
 
 If a cluster is too small or network access fails, Construct Maps records the reason. It does not build a comparison set by hand. A construct assembled from several native parts is scored part by part, each against its own orthologs. Variation among designed constructs measures design differences, so it is never used as evolutionary conservation.
 
+## Install
+
+**Claude (claude.ai and Cowork).** On this repository's GitHub page, choose Code, then Download ZIP. In Claude, go to Customize > Plugins > Add > Upload plugin and select the ZIP.
+
+**Claude Code.** Clone the repository and start Claude Code with the plugin loaded. This loads it for that session.
+
+```
+git clone https://github.com/ishant1994/construct-maps
+claude --plugin-dir ./construct-maps
+```
+
+**ChatGPT.** Construct Maps is not in the plugin directory yet. When it is, install it from the Plugins tab.
+
 ## Using it
 
-Install the plugin and describe:
+Once the plugin is installed, describe:
 
 - The protein or peptide, using a sequence or a public identifier
 - The biological behavior you want to change
@@ -58,7 +71,10 @@ Install the plugin and describe:
 
 To compare existing designs, provide their complete sequences and describe the differences you want to understand.
 
-The skill is named `protein-construct-design`. You can name it directly or describe a relevant task.
+Claude and ChatGPT load the skill when your request matches it. To choose it yourself:
+
+- **Claude:** type `/` and select `protein-construct-design`. In Claude Code the full name is `/construct-maps:protein-construct-design`, and `/protein-construct-design` also works.
+- **ChatGPT:** type `@` and select Construct Maps.
 
 ## Recommended settings
 
