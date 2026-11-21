@@ -6,6 +6,8 @@ Start with a protein, a biological goal, and any constraints. Construct Maps inv
 
 You can also provide constructs you already have. Construct Maps compares their sequences and architectures and presents them in an interactive document or a static figure.
 
+See worked examples, with their interactive maps, on the [demo site](https://ishant1994.github.io/construct-maps-demo/).
+
 ## What you get
 
 ### A focused design library
@@ -55,6 +57,10 @@ Install the plugin and describe:
 To compare existing designs, provide their complete sequences and describe the differences you want to understand.
 
 The skill is named `protein-construct-design`. You can name it directly or describe a relevant task.
+
+## How long does it take?
+
+A design prompt typically takes 10–20 minutes to complete, so be a little patient!
 
 ## How the designs and figures stay connected
 
