@@ -1,8 +1,8 @@
 # BLOSUM62
 
-`BLOSUM62` is the amino-acid substitution table used by the built-in aligner of
+`BLOSUM62.txt` is the amino-acid substitution table used by the built-in aligner of
 `scripts/compute_conservation.py`. It ships with the skill, unchanged, so no download is
-needed to use it.
+needed to use it. The `.txt` only marks it as a text file; the bytes are NCBI's `BLOSUM62`.
 
 - **What:** the BLOSUM62 matrix in NCBI's text format, 2,122 bytes.
 - **Source:** https://ftp.ncbi.nlm.nih.gov/blast/matrices/BLOSUM62, retrieved 2026-11-16.

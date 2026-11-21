@@ -67,7 +67,7 @@ UNIPROT = "https://rest.uniprot.org"
 # The substitution table ships with the skill, so no request is made for it. It is pinned by
 # hash: a different table would change every score the built-in aligner produces. The
 # origin is kept for the provenance record, and data/matrices/NOTICE.md says where it came from.
-MATRIX_FILE = Path(__file__).resolve().parent.parent / "data" / "matrices" / "BLOSUM62"
+MATRIX_FILE = Path(__file__).resolve().parent.parent / "data" / "matrices" / "BLOSUM62.txt"
 MATRIX_SHA256 = "85510d3846ee6d5f4778e425cf8daf6e0dbb889b306f2d13434e1254780efb40"
 MATRIX_ORIGIN = "https://ftp.ncbi.nlm.nih.gov/blast/matrices/BLOSUM62"
 TIMEOUT = 120
