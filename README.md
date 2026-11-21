@@ -59,11 +59,9 @@ git clone https://github.com/ishant1994/construct-maps
 claude --plugin-dir ./construct-maps
 ```
 
-**ChatGPT.** Construct Maps is not in the plugin directory yet. When it is, install it from the Plugins tab.
+**ChatGPT.** Download [construct-maps-openai.zip](https://github.com/ishant1994/construct-maps/releases/latest/download/construct-maps-openai.zip), then upload it in the Plugins tab.
 
 ## Using it
-
-Claude and ChatGPT load the skill when your request matches it. To choose it yourself:
 
 - **Claude:** type `/` and select `protein-construct-design`. In Claude Code the full name is `/construct-maps:protein-construct-design`, and `/protein-construct-design` also works.
 - **ChatGPT:** type `@` and select `Construct Maps`.
