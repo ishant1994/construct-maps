@@ -20,7 +20,7 @@ The opening library usually contains five to ten constructs, including the refer
 
 You can compare constructs on a shared residue scale and inspect functional regions, sequence changes, residue-level findings, and peptide modifications. Zoom from the whole library to individual residues, follow supporting evidence, and highlight corresponding regions across constructs.
 
-The comparison is available as a standalone HTML document and a static SVG figure.
+The comparison is available as a standalone HTML document and a static SVG figure. You can also export one GenPept file for the library, with a record per chain and named, colored features, and one protein FASTA per construct. Export writes no coding sequence and stops if any chain carries chemistry, including the reference.
 
 ### Traceable evidence
 
@@ -63,18 +63,10 @@ claude --plugin-dir ./construct-maps
 
 ## Using it
 
-Once the plugin is installed, describe:
-
-- The protein or peptide, using a sequence or a public identifier
-- The biological behavior you want to change
-- Any constraints, such as delivery, expression system, construct count, or publication cutoff
-
-To compare existing designs, provide their complete sequences and describe the differences you want to understand.
-
 Claude and ChatGPT load the skill when your request matches it. To choose it yourself:
 
 - **Claude:** type `/` and select `protein-construct-design`. In Claude Code the full name is `/construct-maps:protein-construct-design`, and `/protein-construct-design` also works.
-- **ChatGPT:** type `@` and select Construct Maps.
+- **ChatGPT:** type `@` and select `Construct Maps`.
 
 ## Recommended settings
 
@@ -83,14 +75,6 @@ Use GPT 6.2 Sol with high reasoning in ChatGPT, or Claude Sonnet 5.5 with high r
 ## How long does it take?
 
 A design prompt typically takes 10–20 minutes to complete, so be a little patient!
-
-## How the designs and figures stay connected
-
-Construct Maps draws figures from a structured design record containing sequences, annotations, chemistry, and evidence.
-
-It checks declared sequence edits against parent sequences before rendering. Chemistry has separate fields because a D-substitution or disulfide can change the molecule without changing its sequence letters. These checks do not establish biological activity.
-
-For downstream tools, you can export one GenPept file for the library, with a record per chain and named, colored features, plus one protein FASTA per construct. Export writes no coding sequence and stops if any chain carries chemistry, including the reference.
 
 ## Execution and external services
 
