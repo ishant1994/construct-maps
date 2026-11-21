@@ -2,9 +2,9 @@
 
 Design protein and peptide constructs, compare alternatives, and inspect the evidence behind each change.
 
-Start with a protein, a biological goal, and any constraints. Construct Maps investigates the sequence–function relationships relevant to that goal, proposes a focused library with matched controls, and identifies experiments that could distinguish the proposed mechanisms.
+Start with a protein, a biological goal, and any constraints. Construct Maps uses sequence–function evidence to propose a focused library with matched controls and experiments that could distinguish the proposed mechanisms.
 
-You can also provide constructs you already have. Construct Maps compares their sequences and architectures and presents them in an interactive document or a static figure.
+You can also provide existing constructs. Construct Maps compares their sequences and architectures in an interactive document or a static figure.
 
 See worked examples, with their interactive maps, on the [demo site](https://ishant1994.github.io/construct-maps-demo/).
 
@@ -12,25 +12,25 @@ See worked examples, with their interactive maps, on the [demo site](https://ish
 
 ### A focused design library
 
-Each design includes its sequence or chemical specification, the change being tested, supporting evidence, expected tradeoffs, and the main uncertainty. Controls answer specific questions about the proposed mechanism.
+Each design includes its sequence or chemical specification, the change being tested, evidence, expected tradeoffs, and main uncertainty. Each control tests a specific question about the proposed mechanism.
 
 The opening library usually contains five to ten constructs, including the reference and controls.
 
 ### An interactive construct comparison
 
-Constructs line up on a shared residue scale. The document shows functional regions, sequence changes, residue-level findings, and peptide modifications. You can zoom from the whole library to individual residues, inspect supporting evidence, and highlight corresponding regions across constructs.
+You can compare constructs on a shared residue scale and inspect functional regions, sequence changes, residue-level findings, and peptide modifications. Zoom from the whole library to individual residues, follow supporting evidence, and highlight corresponding regions across constructs.
 
 The comparison is available as a standalone HTML document and a static SVG figure.
 
 ### Traceable evidence
 
-Functional annotations and design decisions link to their sources. The record distinguishes findings measured in the relevant construct from evidence transferred from another context and from predictions.
+Construct Maps links functional annotations and design decisions to sources and labels evidence as measured in the relevant construct, transferred from another context, or predicted.
 
-It also records what was inspected in each source and where important evidence remains unavailable or inconclusive. Citation checks compare paper identifiers with bibliographic records.
+It lists which parts of each source were inspected and where evidence remains unavailable or inconclusive. Citation checks compare source titles with Europe PMC records for their identifiers; they do not check that a paper supports the claim attached to it.
 
 ### Explicit peptide chemistry
 
-Ordinary sequence letters cannot fully describe many peptides. Construct Maps records supported modifications explicitly, including:
+Ordinary sequence letters cannot fully describe many peptides. Construct Maps records modifications explicitly, including:
 
 - D-amino acids and non-natural residues
 - N-methylation
@@ -38,13 +38,15 @@ Ordinary sequence letters cannot fully describe many peptides. Construct Maps re
 - Disulfide, lactam, and backbone cyclization
 - Supported lipid and spacer attachments
 
-A structure is derived from the chemical record when the molecule can be fully represented. Unsupported chemistry is identified as a gap. Plain-sequence export is blocked when it would omit recorded chemistry and describe a different molecule.
+Construct Maps derives a structure when the chemical record describes the whole molecule. It flags unsupported chemistry as a gap and blocks plain-sequence export when the letters would omit chemistry and describe a different molecule.
 
-### Conservation with its supporting context
+### Conservation across evolutionary relatives
 
-Conservation analysis uses a documented homolog set. Results include the alignment method, per-position coverage, and effective sequence count, so a large collection of closely related sequences is not mistaken for equally strong independent evidence.
+Construct Maps compares your protein with orthologs from its UniRef50 cluster by default, or a Pfam family on request. Orthologs describe conservation in this protein; the family describes conservation across related proteins with different functions. Specificity residues can vary across the family.
 
-If a meaningful profile cannot be produced, the record states why.
+Scores run from 0 to 1, with 1 most constrained within that comparison set. Near-identical sequences are down-weighted so an over-sampled genus has less influence. Alongside each value, you can inspect the alignment method, how many sequences cover the position, and the set's effective count of independent sequences. With MAFFT, positions that too few sequences cover stay unscored.
+
+If a cluster is too small or network access fails, Construct Maps records the reason. It does not build a comparison set by hand. A construct assembled from several native parts is scored part by part, each against its own orthologs. Variation among designed constructs measures design differences, so it is never used as evolutionary conservation.
 
 ## Using it
 
@@ -64,19 +66,19 @@ A design prompt typically takes 10–20 minutes to complete, so be a little pati
 
 ## How the designs and figures stay connected
 
-The sequence records, annotations, chemical specifications, evidence, and figures come from one structured design record.
+Construct Maps draws figures from a structured design record containing sequences, annotations, chemistry, and evidence.
 
-Declared sequence edits are checked against their parent sequences before rendering. Chemistry is recorded separately because changes such as a D-substitution or a disulfide can alter the molecule without changing its sequence letters.
+It checks declared sequence edits against parent sequences before rendering. Chemistry has separate fields because a D-substitution or disulfide can change the molecule without changing its sequence letters. These checks do not establish biological activity.
 
-These checks establish consistency within the record. They do not establish biological activity.
+For downstream tools, you can export one GenPept file for the library, with a record per chain and named, colored features, plus one protein FASTA per construct. Export writes no coding sequence and stops if any chain carries chemistry, including the reference.
 
 ## Execution and external services
 
-The bundled scripts run in the environment provided by the hosting AI application. That environment may be cloud-hosted or local, depending on the application and session.
+The bundled scripts run in the hosting AI application's environment, which may be cloud-hosted or local, depending on the application and session.
 
 The plugin has no author-operated backend, account system, or analytics. Its author does not receive session files through a plugin-operated service.
 
-The bundled scripts may contact the following services when the corresponding workflow step runs:
+The bundled scripts may contact these services during the corresponding workflow step:
 
 | Step | Service | Information sent |
 |---|---|---|
@@ -84,9 +86,9 @@ The bundled scripts may contact the following services when the corresponding wo
 | Check citation metadata | Europe PMC | DOI, PubMed, or PMC identifiers |
 | Install Python dependencies | The configured package index and download hosts | Package requests for RDKit, pyfamsa, and their dependencies |
 
-The bundled database lookup scripts do not submit the sequence being designed. Lookups may be initiated as part of completing your task; they do not require a separate request for each step.
+The bundled database lookup scripts do not send the sequence being designed. Lookups can run as part of your task without a separate request for each step.
 
-Literature research may also use search, browsing, or other tools supplied by the hosting AI application. Those tools make their own external requests and follow that application’s settings and policies.
+Literature research can also use search, browsing, or other tools from the hosting AI application. These make their own external requests under that application's settings and policies.
 
 See `PRIVACY.md` for details.
 
@@ -98,9 +100,11 @@ Without it, designs, sequence checks, chemistry, and figures still work. Conserv
 
 ## Requirements
 
-The renderer uses Node.js. Structure assembly, homolog retrieval, and conservation scoring use Python.
+The renderer needs Node.js 20 or later. Structure assembly, homolog retrieval, and conservation scoring use Python 3.
 
-Chemical structure assembly uses RDKit. Multiple-sequence alignment uses MAFFT when available, with FAMSA through pyfamsa as an alternative. The analysis record identifies the method used.
+Chemical structure assembly uses RDKit. Without it, a fallback assembler writes the same molecule in a form many drawing tools refuse, and the document says which form you have.
+
+Alignment uses MAFFT when it is installed. Without it, the plugin installs pyfamsa (FAMSA), and as a last resort it uses a built-in aligner that needs nothing. Each analysis names the aligner it used. The built-in aligner scores every position, including regions the relatives lack, so check the coverage beside each value.
 
 ## License
 
