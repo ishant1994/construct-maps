@@ -60,6 +60,10 @@ To compare existing designs, provide their complete sequences and describe the d
 
 The skill is named `protein-construct-design`. You can name it directly or describe a relevant task.
 
+## Recommended settings
+
+Use GPT 6.2 Sol with high reasoning in ChatGPT, or Claude Sonnet 5.5 with high reasoning in Claude. Claude Opus 5.5 often declines questions like these, so Sonnet is the better choice there.
+
 ## How long does it take?
 
 A design prompt typically takes 10–20 minutes to complete, so be a little patient!
